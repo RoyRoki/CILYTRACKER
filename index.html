@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="public/slylogox.png" type="png" />
+    <title>Sly Traker </title>
+</head>
+<body>
+    <header>
+        <div class="firstrow">
+         <img src="public/slylogox.png" alt="Sly Logo" class="logo">
+         <h1>Sly Tracker</h1>   
+        </div>
+        
+        <p>Syllabus and Progress Tracking Tool</p>
+    </header>
+
+    <div id="popupOverlay" class="popup-overlay" style="display: none;">
+       <div class="popup">
+        <button class="close-btn" onclick="closePopup()"></button>
+        <h2>Sly Tracker Here</h2>
+        <p>Please choose your semester to proceed.</p>
+        <div class="popsem">
+        <button onclick="setSem(1)">sem1</button>
+        <button onclick="setSem(2)">sem2</button>
+        <button onclick="setSem(3)">sem3</button>
+        <button onclick="setSem(4)">sem4</button>
+        <button onclick="setSem(5)">sem5</button>
+        <button onclick="setSem(6)">sem6</button>
+        <button onclick="setSem(7)">sem7</button>
+        <button onclick="setSem(8)">sem8</button>  
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="sem">
+        <button onclick="setSem(1)">sem1</button>
+        <button onclick="setSem(2)">sem2</button>
+        <button onclick="setSem(3)">sem3</button>
+        <button onclick="setSem(4)">sem4</button>
+        <button onclick="setSem(5)">sem5</button>
+        <button onclick="setSem(6)">sem6</button>
+        <button onclick="setSem(7)">sem7</button>
+        <button onclick="setSem(8)">sem8</button>
+    </div>
+    
+    <div class="course">
+        <input type="button" value="BCA" onclick="showSlyTracker('bca')">
+        <input type="button" value="computerScience" onclick="showSlyTracker('cs')">
+        <input type="button" value="Physic" onclick="showSlyTracker('phy')">
+        <input type="button" value="Math" onclick="showSlyTracker('math')">  
+    </div>
+    
+
+    <div id="show"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

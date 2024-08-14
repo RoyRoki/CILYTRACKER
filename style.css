@@ -1,0 +1,350 @@
+
+body {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  background-attachment: fixed;
+}
+ul {
+  list-style: none;
+  line-height: 2rem;
+  user-select: none;
+}
+details > summary {
+  list-style: none;
+}
+
+.tree summary {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-left: 1em;
+}
+.tree summary:hover {
+  color: rgb(1, 130, 1);
+}
+
+.tree summary::marker {
+  display: none;
+}
+
+.tree summary::-webkit-details-marker {
+  display: none;
+}
+
+ul li {
+  position: relative;
+  transition: background-color 0.3s ease;
+  padding-left: .2em;
+}
+ul li::before {
+  position: absolute;
+  left: -10px;
+  top: 0px;
+  border-left: 2px solid gray;
+  border-bottom: 2px solid gray;
+  content: "";
+  width: 8px;
+  height: 1rem;
+}
+
+ul li::after {
+  position: absolute;
+  left: -10px;
+  bottom: 0px;
+  border-left: 2px solid gray;
+  content: "";
+  width: 10px;
+  height: 100%;
+}
+
+ul li:last-child::after {
+  display: none;
+}
+
+ul.tree > li:after , ul.tree > li::before {
+  display: none;
+}
+
+ul summary::before {
+  position: absolute;
+  content: "+";
+  font-weight: bold;
+  border: 2px solid gray;
+  background-color: white;
+  border-radius: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: -1.48em;
+  top: .3em;
+  text-align: center;
+  line-height: 1.2em;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  transform: rotate(90deg);
+  z-index: 5;
+}
+
+ul details[open] > summary::before {
+  content: "~";
+  font-weight: bold;
+  transform: rotate(180deg);
+}
+details[open] > summary {
+    color:green;
+}
+details[open] > summary::before {
+    border-color: green;
+}
+.checkbox {
+  position: relative;  
+  bottom: -3px;
+}
+
+
+
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5;
+  height: auto;
+  background-color: rgba(244, 244, 244, 0.402);
+  box-shadow: 0 5px 25px RGB(26, 34, 39 / 10%);
+}
+.firstrow {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+header img {
+  padding: 0.1em;
+  margin: 1em;
+  margin-bottom: 0;
+  width: 50px;
+  height: auto;
+}
+
+header h1 {
+  padding-top: 0.2em;
+  margin: 0;
+  color: #7ccf29;
+  font-size: 3rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "Akaya Telivigala", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+header p {
+  color: rgb(97, 98, 106);
+  margin-left: 1em;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.popup {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  padding: 10px;
+  max-width: 80%;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  z-index: 1001;
+}
+.popsem {
+  justify-content:center !important;
+  padding: 5px 30px 5px 30px !important;
+}
+
+.close-btn {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  color: #888;
+  position: absolute;
+  top: 1.3em;
+  right: 1em;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+  width: 0;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-btn::before,
+.close-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: gray;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.close-btn::before {
+  transform: rotate(45deg);
+}
+
+.close-btn::after {
+  transform: rotate(-45deg);
+}
+
+.close-btn:hover::before,
+.close-btn:hover::after {
+  background-color: #444;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+.popup h2 {
+  color: #7ccf29;
+  font-family: "Akaya Telivigala", system-ui;
+  margin-bottom: 10px;
+  font-size: 2em !important;
+}
+
+.popup p {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 1em !important;
+}
+
+
+.sem , .course , .popsem {
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content:stretch;
+  overflow-x: auto;
+  gap:10px;
+  padding:1em .5em 1em .5em;
+  margin-top: 0.2em;
+  background:linear-gradient(to bottom, transparent, #28282808);
+  box-shadow: 0 5px 25px RGB(26, 34, 39 / 10%);  
+}
+.course , .popsem {
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+.sem button , .course input , .popup button {
+  background-color: rgba(244, 244, 244, 0.402)#ecf0f1;
+  color: rgb(97, 98, 106);
+  border: 2px solid rgb(97, 98, 106);
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-family: "Akaya Telivigala", system-ui;
+  cursor: pointer;
+  transition: background-color 0.3s,color 0.2s, transform 0.2s; 
+  box-shadow: 0 4px 8px rgba(52, 51, 51, 0.199);
+}
+
+.sem button:hover, .course input:hover, .popup button:hover {
+  background-color: #7ccf29;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.sem button:active , .course input:active{
+  background-color: #2828284f; 
+  transform: translateY(0);
+}
+
+
+
+.infoheader {
+  display: flex;
+  flex-direction: column;
+  background-color: #9b9b9b09;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 1px 11px 100px rgba(0, 0, 0, 0.15);
+}
+
+.infoheader h1 {
+  font-size: 2em;
+  color: #519e04;
+  margin: 0;
+   font-family: "Akaya Telivigala", system-ui;
+}
+
+
+.infoheader > .subheader-row {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+}
+
+.infoheader h2 {
+  font-size: 1.5em;
+  color: rgb(97, 98, 106);
+  margin: 0;
+}
+
+.infoheader p {
+  font-size: 1.4em;
+  color: rgb(97, 98, 106);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .popup {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .popup h2 {
+    font-size: 20px;
+  }
+
+  .popup p {
+    font-size: 14px;
+  }
+
+  .popup button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+.akaya-telivigala-regular {
+  font-family: "Akaya Telivigala", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
