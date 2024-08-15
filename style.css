@@ -379,6 +379,62 @@ header p:hover {
   }
 }
 
+
+/* Footer Styles */
+footer {
+    background:linear-gradient(to bottom, transparent, #8885857e);
+    color: #2d2b2b;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    margin-top: 17.5em;
+    width: 100%;
+    transition: color .5s ease-out , background-color 0.5s ease-in-out;
+    
+}
+footer:hover {
+  color: green;
+  background-color: #c4bdbd20;
+
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.footer-content a {
+    color: #0b0b0b;
+    text-decoration: none;
+    transition: color .5s ease-out;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+    color: #0578cf;
+}
+
+.social-media {
+    margin: 1rem 0;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+    color: #4a4545;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+
 .akaya-telivigala-regular {
   font-family: "Akaya Telivigala", system-ui;
   font-weight: 400;

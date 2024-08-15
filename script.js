@@ -7,8 +7,6 @@ window.onload = function () {
 };
 
 
-
-
 document.addEventListener("change", function (event) {
   if (event.target.type === "checkbox") {
     savedebounce();

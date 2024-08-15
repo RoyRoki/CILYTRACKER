@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="University of North Bengal Syllabus Tracker: Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app." />
+    <meta name="keywords" content="University of North Bengal, syllabus tracker, study sites, NBU, semester, subject" />
+    <meta name="author" content="Roy Roki" />
+    <meta property="og:title" content="Cily Tracker - Find Your Syllabus NBU" />
+    <meta property="og:description" content="Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app." />
+    <meta property="og:image" content="public/slylogox.png" />
+    <meta property="og:url" content="https://cilytracker.web.app/" />
+    <meta name="twitter:card" content="public/slylogox.png" />
+    <meta name="twitter:title" content="Cily Tracker - Find Your Syllabus NBU" />
+    <meta name="twitter:description" content="Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app." />
+    <meta name="twitter:image" content="public/slylogox.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="public/slylogox.png" type="png" />
-    <title>Cily Traker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="public/slylogox.png" type="image/png" />
+    <title>Cily Tracker - Find Your Syllabus NBU</title>
   </head>
   <body>
     <header>
       <div class="firstrow">
-        <img src="public/slylogox.png" alt="Sly Logo" class="logo" />
+        <img src="public/slylogox.png" alt="cily Logo" class="logo" />
         <h1>Cily Tracker</h1>
       </div>
 
@@ -40,8 +48,8 @@
         </div>
       </div>
     </div>
-
-    <div class="sem">
+<nav>
+     <div class="sem">
       <button onclick="setSem(1)">sem1</button>
       <button onclick="setSem(2)">sem2</button>
       <button onclick="setSem(3)">sem3</button>
@@ -50,7 +58,7 @@
       <button onclick="setSem(6)">sem6</button>
       <button onclick="setSem(7)">sem7</button>
       <button onclick="setSem(8)">sem8</button>
-    </div>
+    </div> 
 
     <div class="course">
       <input type="button" value="BCA MAJ" onclick="showSlyTracker('bcamaj')" />
@@ -68,8 +76,24 @@
         onclick="showSlyTracker('mathmin')"
       />
     </div>
+</nav>
 
-    <div id="show"></div>
+<main>
+  <div id="show"></div>
+</main>
+
+
+    <footer>
+       <div class="footer-content">
+            <p>&copy; 2024 Cily Tracker. All rights reserved.</p>
+            <p><a href="cilytracker@gmail.com">contact@cilytracker.web.app</a></p>
+            <div class="social-media">
+                <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
