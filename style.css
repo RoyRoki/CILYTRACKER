@@ -1,6 +1,7 @@
 
 body {
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  position: sticky;
+  background-image: linear-gradient(to top, #e9eff2 0%, #e8eff2 100%);
   background-size: cover;
   height: 100%;
   margin: 0;
@@ -103,7 +104,14 @@ details[open] > summary::before {
   bottom: -3px;
 }
 
-
+details p {
+  color:gray;
+  margin: .05em 0 0.1em 1.8em;
+  transition: color 0.5s ease-in-out;
+}
+details p:hover {
+  color:black;
+}
 
 
 
@@ -112,8 +120,12 @@ header {
   flex-direction: column;
   padding: 0.5;
   height: auto;
-  background-color: rgba(244, 244, 244, 0.402);
+  background-color: rgb(243, 247, 248);
   box-shadow: 0 5px 25px RGB(26, 34, 39 / 10%);
+  transition: background-color 0.5s ease-in-out;
+}
+header:hover {
+  background-color: #c4bdbd81;
 }
 .firstrow {
   display: flex;
@@ -139,10 +151,18 @@ header h1 {
   font-family: "Akaya Telivigala", system-ui;
   font-weight: 400;
   font-style: normal;
+  transition: color 0.5s ease-in-out;
+}
+header h1:hover {
+  color:#519e04;
 }
 header p {
   color: rgb(97, 98, 106);
   margin-left: 1em;
+  transition: color 0.5s ease-in-out;
+}
+header p:hover {
+  color:black;
 }
 
 .popup-overlay {
@@ -254,8 +274,12 @@ header p {
   gap:10px;
   padding:1em .5em 1em .5em;
   margin-top: 0.2em;
-  background:linear-gradient(to bottom, transparent, #28282808);
+  background:linear-gradient(to bottom, transparent, #d3cfcf08);
   box-shadow: 0 5px 25px RGB(26, 34, 39 / 10%);  
+  transition: background-color 0.5s ease-in-out;
+}
+.sem:hover , .course:hover {
+  background-color: #c4bdbd81;
 }
 .course , .popsem {
   flex-wrap: wrap;
@@ -268,10 +292,14 @@ header p {
   border-radius: 25px;
   padding: 10px 20px;
   font-size: 1.2rem;
+  scale: 0.85;
   font-family: "Akaya Telivigala", system-ui;
   cursor: pointer;
   transition: background-color 0.3s,color 0.2s, transform 0.2s; 
   box-shadow: 0 4px 8px rgba(52, 51, 51, 0.199);
+}
+.popsem button {
+  scale: 1 !important;
 }
 
 .sem button:hover, .course input:hover, .popup button:hover {
@@ -314,6 +342,10 @@ header p {
   font-size: 1.5em;
   color: rgb(97, 98, 106);
   margin: 0;
+  transition: color 0.5s ease-in-out;
+}
+.infoheader h2:hover {
+  color: rgb(0, 0, 0);
 }
 
 .infoheader p {
@@ -321,6 +353,10 @@ header p {
   color: rgb(97, 98, 106);
   line-height: 1.5;
   margin: 0;
+  transition: color 0.5s ease-in-out;
+}
+.infoheader p:hover {
+  color: black;
 }
 
 @media (max-width: 480px) {

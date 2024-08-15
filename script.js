@@ -5,6 +5,18 @@ window.onload = function () {
   document.getElementById("popupOverlay").style.display = "flex";
   if (STREAM.length === 0 && SEM === 0) homeInfoHeader();
 };
+// For Install Feature
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    }).catch(error => {
+      console.log('Service Worker registration failed:', error);
+    });
+  });
+}
+
+
 
 document.addEventListener("change", function (event) {
   if (event.target.type === "checkbox") {
@@ -37,9 +49,12 @@ function showSlyTracker(stream) {
       const li = document.createElement("li");
       const details = document.createElement("details");
       const summary = document.createElement("summary");
+      const code = document.createElement('p');
 
       summary.textContent = subject.name;
+      code.textContent = `Code: ${subject.code}`
       details.appendChild(summary);
+      details.appendChild(code)
 
       const units = document.createElement("ul");
 
@@ -88,8 +103,8 @@ function showSlyTracker(stream) {
   const h1 = document.createElement("h1");
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
-  p.textContent = `Semester ${Sem}`;
-  h2.textContent = `${Year} Year`;
+  p.textContent = `${Year} Year`;
+  h2.textContent = `Semester ${Sem}`;
   h1.textContent = `${Course}`;
 
   const subheaderRow = document.createElement("div");
@@ -188,8 +203,8 @@ function setSem(n) {
   const h1 = document.createElement("h1");
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
-  p.textContent = `Semester ${Sem}`;
-  h2.textContent = `${Year} Year`;
+  p.textContent = `${Year} Year`;
+  h2.textContent = `Semester ${Sem}`;
   h1.textContent = `${Course}`;
 
   const subheaderRow = document.createElement("div");
@@ -237,177 +252,415 @@ function getData(semPstream) {
   //.......................................>>>>>>>>SCIENCE<<<<<<<<<<<<<<<<<<<................
     case "1mathmaj" :
             return {
-        stream: "Math Honours",
+        stream: "Math Maj",
         year: "1st",
         sem: "1",
         subjects: {
           subject1: {
-            code: "MATH11HCC-I",
+            code: "MATHMAJ102",
             name: "Calculus and Geometry ",
             units: {
-   unit1: {
-            name: "Calculus I",
-            data: [
-                "Understand hyperbolic functions and their properties.",
-                "Compute higher order derivatives and apply Leibnitz rule to functions of the form 𝑒^(𝑎𝑥+𝑏) sin 𝑥, 𝑒^(𝑎𝑥+𝑏) cos 𝑥, (𝑎𝑥 + 𝑏)ⁿ sin 𝑥, (𝑎𝑥 + 𝑏)ⁿ cos 𝑥.",
-                "Apply L'Hospital’s rule to solve limits involving indeterminate forms.",
-                "Explore the concept of plane, simple, and closed curves and their parameterizations.",
-                "Analyze curves using pedal equations, envelopes, evolutes, and asymptotes.",
-                "Determine the radius of curvature and perform curve tracing in Cartesian and polar coordinates for standard curves.",
-                "Identify concavity, convexity, cusps, and inflection points."
-            ]
-        },
-        unit2: {
-            name: "Calculus II",
-            data: [
-                "Apply reduction formulae to integrals of the form ∫ sinⁿ𝑥 dx, ∫ cosⁿ𝑥 dx, ∫ secⁿ𝑥 dx, ∫ tanⁿ𝑥 dx, ∫ (log𝑥)ⁿ dx, ∫ sinⁿ𝑥 cosᵐ𝑥 dx, etc.",
-                "Calculate the arc length of curves, including parametric curves.",
-                "Determine the area enclosed by a curve, the area between two curves, and the volume of revolution for curves."
-            ]
-        },
+    unit1: {
+        name: "Calculus I",
+        data: [
+            "Reduction formulae, derivations and illustrations of reduction formulae of the type ∫ sinⁿ𝑥 dx, ∫ cosⁿ𝑥 dx, ∫ secⁿ𝑥 dx, ∫ tanⁿ𝑥 dx, ∫ (log𝑥)ⁿ dx, ∫ sinⁿ𝑥 cosᵐ𝑥 dx etc.",
+            "Arc length of a curve including parametric curves, area enclosed by a curve, area between two curves."
+        ]
+    },
+    unit2: {
+        name: "Calculus II",
+        data: [
+            "Successive derivatives, Leibnitz rule and its applications.",
+            "Indeterminate forms, L’Hospital’s rule and its applications.",
+            "Concept of simple and closed curves and their parameterizations.",
+            "Pedal equation, envelopes, evolute, asymptotes, radius of curvature.",
+            "Concavity, convexity, cusps and inflection points."
+        ]
+    },
     unit3: {
-                name: "Geometry I",
-                data: [
-                    "Understand the reflection properties of conics.",
-                    "Apply rotation of axes to second degree equations.",
-                    "Classify conics using the discriminant.",
-                    "Find the tangent and normal to conics.",
-                    "Work with polar equations of conics."
-                ]
-            },
-            unit4: {
-                name: "Geometry II",
-                data: [
-                    "Analyze 3D shapes such as spheres, cylindrical surfaces, central conicoids, paraboloids, and hyperboloids.",
-                    "Understand plane sections of conicoids and generating lines.",
-                    "Classify quadrics and graph standard quadric surfaces like cones and ellipsoids."
-                ]
-            }
+        name: "Geometry I",
+        data: [
+            "2D: Reflection properties of conics, rotation of axes and second-degree equations.",
+            "Pair of straight lines, classification of conics using the discriminant.",
+            "Polar equations of conics."
+        ]
+    },
+    unit4: {
+        name: "Geometry II",
+        data: [
+            "3D: Spheres, cylindrical surfaces, cones, ellipsoids, paraboloids, hyperboloids.",
+            "Plane sections of conicoids, generating lines, classification of quadrics."
+        ]
+    }
 },
           },
           subject2: {
-            code: "MATH11HCC-II",
-            name: "Algebra",
+            code: "MATHMAJ101",
+            name: "Classical Algebra and Matrix Theory",
             units: {
-        unit1: {
-            name: "Classical Algebra I",
-            data: [
-                "Complex numbers: Polar representation",
-                "De Moivre’s theorem for rational indices and its applications",
-                "Trigonometric, logarithm, exponential and hyperbolic functions of complex variable",
-                "Theory of equations: Fundamental theorem of Classical Algebra (statement only)",
-                "Relation between roots and coefficients",
-                "Symmetric functions of roots",
-                "Transformation of equation",
-                "Descartes’ rule of signs",
-                "Sturms’ theorem",
-                "Cubic equation (Cardan’s method)",
-                "Biquadratic equation (Ferrari’s method)",
-                "Graphical representation of a polynomial",
-                "Inequality: AM ≥ GM ≥ HM",
-                "Theorem of weighted means and m-th power theorem (statement only)",
-                "Cauchy-Schwartz inequality (statements only) and its application"
-            ]
-        },
-        unit2: {
-            name: "Classical Algebra II",
-            data: [
-                "Equivalence relations",
-                "Partition",
-                "Partially ordered relation",
-                "Functions",
-                "Composition of functions",
-                "Permutations",
-                "Even and odd permutations",
-                "Invertible functions",
-                "Well-ordering property of positive integers",
-                "Principles of mathematical induction",
-                "Division algorithm",
-                "Divisibility and Euclidean algorithm",
-                "Congruence relation between integers",
-                "Fundamental Theorem of Arithmetic (statement only)",
-                "Solution of linear congruence equations"
-            ]
-        }
+    unit1: {
+        name: "Classical Algebra I",
+        data: [
+            "Complex numbers: Polar representation, De Moivre’s theorem for rational indices and its applications.",
+            "Logarithm, trigonometric, exponential and hyperbolic functions of complex variable."
+        ]
     },
-    linearAlgebra: {
-        unit3: {
-            name: "Linear Algebra I",
-            data: [
-                "Matrices: Inverse of a matrix",
-                "Characterizations of invertible matrices",
-                "Elementary operations and matrices",
-                "Echelon matrix",
-                "Row/column reduced echelon matrix",
-                "Rank of matrix",
-                "Normal forms",
-                "Equivalency and congruency of matrices",
-                "Eigen values and eigen vectors of a square matrix",
-                "Characteristic equation of a matrix",
-                "Cayley-Hamilton theorem and its use in finding the inverse of a matrix"
-            ]
-        },
-        unit4: {
-            name: "Linear Algebra II",
-            data: [
-                "Systems of linear equations: Consistency",
-                "Matrix equation AX = B of a system of linear equations",
-                "Solution sets of linear systems",
-                "Solution of linear systems using row reduced form"
-            ]
-        }
+    unit2: {
+        name: "Classical Algebra II",
+        data: [
+            "Theory of polynomial equations: Fundamental theorem of Classical Algebra (statement only).",
+            "Location and nature of roots: Descartes’ rule of signs and Sturms’ theorem.",
+            "Relation between roots and coefficients.",
+            "Solution methods for cubic and biquadratic polynomial equations: Cardan’s and Ferrari’s method.",
+            "Symmetric functions of roots, transformation of equations, special roots, reciprocal equations."
+        ]
     },
+    unit3: {
+        name: "Classical Algebra III",
+        data: [
+            "Inequality: AM ≥ GM ≥ HM, weighted means and m-th power theorem (statement only), Cauchy-Schwarz inequality (statements only) and their applications.",
+            "Integers: Well-ordering property of positive integers, division algorithm, Euclidean algorithm, congruence relation between integers.",
+            "Fundamental Theorem of Arithmetic (statement only), solution of linear congruence, Chinese Remainder Theorem (statement only) and its applications to find a solution of a system of linear congruences.",
+            "Fermat’s Little theorem & Wilson theorem (statement only) and their simple problems."
+        ]
+    },
+    unit4: {
+        name: "Matrix Theory I",
+        data: [
+            "Matrices: Elementary operations, elementary matrices, row/column equivalent matrix, echelon matrix, row/column reduced echelon matrix.",
+            "Rank of matrix, normal forms, congruence operations, congruence matrices.",
+            "Signature and index."
+        ]
+    },
+    unit5: {
+        name: "Matrix Theory II",
+        data: [
+            "Eigenvalues and eigenvectors of a square matrix, characteristic equation of a matrix.",
+            "Cayley-Hamilton theorem (statement only) and its simple applications."
+        ]
+    }
+},
           },
         },
       };
     case "1mathmin":
             return {
-        stream: "Math DSC",
+        stream: "Math Minor / DSC",
         year: "1st",
         sem: "1",
         subjects: {
           subject1: {
-            code: "MATP11DSC",
-            name: "Calculus and Geometry",
+            code: "MATHDSC202/MATHMIN202",
+            name: "Classical Algebra and Matrix Theory ",
             units: {
-   unit1: {
-            name: "Calculus I",
-            data: [
-                "Understand hyperbolic functions and their properties.",
-                "Compute higher order derivatives and apply the Leibnitz rule to functions such as 𝑒^(𝑎𝑥+𝑏) sin 𝑥, 𝑒^(𝑎𝑥+𝑏) cos 𝑥, (𝑎𝑥 + 𝑏)ⁿ sin 𝑥, (𝑎𝑥 + 𝑏)ⁿ cos 𝑥.",
-                "Apply L'Hospital’s rule to solve limits involving indeterminate forms.",
-                "Explore the concepts of plane, simple, and closed curves and parameterize these curves.",
-                "Analyze curves using pedal equations, envelopes, evolutes, asymptotes, and radius of curvature.",
-                "Trace curves in Cartesian and polar coordinates for standard curves.",
-                "Identify concavity, convexity, cusps, and inflection points."
-            ]
+    unit1: {
+        name: "Classical Algebra I",
+        data: [
+            "Complex numbers: Polar representation, De Moivre’s theorem for rational indices and its applications.",
+            "Logarithm, trigonometric, exponential and hyperbolic functions of complex variable."
+        ]
+    },
+    unit2: {
+        name: "Classical Algebra II",
+        data: [
+            "Theory of polynomial equations: Fundamental theorem of Classical Algebra (statement only).",
+            "Location and nature of roots: Descartes’ rule of signs.",
+            "Relation between roots and coefficients.",
+            "Solution methods for cubic and biquadratic polynomial equations: Cardan’s and Ferrari’s method.",
+            "Symmetric functions of roots, transformation of equations."
+        ]
+    },
+    unit3: {
+        name: "Classical Algebra III",
+        data: [
+            "Inequality: AM ≥ GM ≥ HM, weighted means and m-th power theorem (statement only).",
+            "Cauchy-Schwarz inequality (statements only) and their applications."
+        ]
+    },
+    unit4: {
+        name: "Matrix Theory I",
+        data: [
+            "Matrices: Elementary operations, elementary matrices, row/column equivalent matrix, echelon matrix, row/column reduced echelon matrix.",
+            "Rank of matrix, normal forms, congruence operations, congruence matrices.",
+            "Systems of linear equations: Consistency, the matrix equation AX = B of a system of linear equations, solution sets of linear systems, solution of linear systems using row reduced form."
+        ]
+    },
+    unit5: {
+        name: "Matrix Theory II",
+        data: [
+            "Eigenvalues and eigenvectors of a square matrix, characteristic equation of a matrix.",
+            "Cayley-Hamilton theorem (statement only) and its simple applications."
+        ]
+    }
+},
+          },
         },
-        unit2: {
-            name: "Calculus II",
-            data: [
-                "Apply reduction formulae to integrals of the form ∫ sinⁿ𝑥 dx, ∫ cosⁿ𝑥 dx, ∫ secⁿ𝑥 dx, ∫ tanⁿ𝑥 dx, ∫ (log𝑥)ⁿ dx, ∫ sinⁿ𝑥 cosᵍ𝑥 dx, etc.",
-                "Calculate the arc length of curves, including parametric curves.",
-                "Determine the area enclosed by a curve, area between two curves, and volume of revolution for curves."
-            ]
+      };
+    case "1phymaj" :
+            return {
+        stream: "Physics Maj",
+        year: "1st",
+        sem: "1",
+        subjects: {
+          subject1: {
+            code: "UPHYMAJ-1",
+            name: "Mathematical Physics I",
+units: {
+    unit1: {
+        name: "Vector Algebra",
+        data: [
+            "Properties of vectors under rotations.",
+            "Scalar product and its invariance under rotations.",
+            "Vector product, Scalar triple product and their interpretation in terms of area and volume, respectively.",
+            "Scalar and Vector fields."
+        ]
+    },
+    unit2: {
+        name: "Vector Calculus",
+        data: [
+            "Directional derivatives and normal derivative.",
+            "Gradient of a scalar field and its geometrical interpretation.",
+            "Divergence and curl of a vector field.",
+            "Del and Laplacian operators.",
+            "Vector identities."
+        ]
+    },
+    unit3: {
+        name: "Vector Integration",
+        data: [
+            "Ordinary Integrals of Vectors.",
+            "Multiple integrals.",
+            "Notion of infinitesimal line, surface and volume elements.",
+            "Line, surface and volume integrals of vector fields.",
+            "Flux of a vector field.",
+            "Gauss's divergence theorem, Green's and Stokes Theorems and their applications."
+        ]
+    },
+    unit4: {
+        name: "Orthogonal Curvilinear Coordinates and Expansion in Series",
+        data: [
+            "Orthogonal Curvilinear Coordinates.",
+            "Derivation of Gradient, Divergence, Curl, and Laplacian in Cartesian, Spherical, and Cylindrical Coordinate Systems.",
+            "Expansion in Taylor and Binomial Series."
+        ]
+    },
+    unit5: {
+        name: "Differential Equations",
+        data: [
+            "First Order and Second Order Differential equations: First Order Differential Equations and Integrating Factor.",
+            "Homogeneous Equations with constant coefficients.",
+            "Wronskian and general solution.",
+            "Statement of existence and Uniqueness Theorem for initial value problems."
+        ]
+    }
+},
+          },
+          subject2: {
+            code: "UPHYMAJ-1(Practical)",
+            name: "Mathematical Physics-I Lab",
+units: {
+    unit1: {
+        name: "Errors and Error Analysis in Scientific Computing",
+        data: [
+            "Floating point numbers, single and double precision arithmetic, underflow & overflow.",
+            "Truncation and round-off errors.",
+            "Absolute and relative errors."
+        ]
+    },
+    unit2: {
+        name: "Introduction to Programming in Python",
+        data: [
+            "Introduction to programming: constants, variables and data types, dynamic typing.",
+            "Operators and expressions, modules, I/O statements, iterables.",
+            "Compound statements, indentation in Python.",
+            "The if-elif-else block, for and while loops, nested compound statements.",
+            "Lists, tuples, dictionaries and strings.",
+            "Basic file handling.",
+            "Basic ideas of object-oriented programming."
+        ]
+    }
+},
+          },
+          subject3: {
+            code: "UPHYMAJ-2",
+            name: "Mechanics",
+units: {
+    unit1: {
+        name: "Fundamentals of Dynamics",
+        data: [
+            "Reference frames. Inertial frames – Review of Newton’s laws of motion.",
+            "Galilean transformations; Galilean invariance.",
+            "Momentum of variable-mass system: motion of rocket.",
+            "Dynamics of a system of particles – conservation of linear momentum, Centre of mass.",
+            "Conservative and non-conservative forces.",
+            "Potential energy. Stable and unstable equilibrium.",
+            "Force as gradient of potential energy.",
+            "Law of conservation of energy."
+        ]
+    },
+    unit2: {
+        name: "Rotational Dynamics",
+        data: [
+            "Rotation about a fixed axis – Moment of Inertia, Kinetic energy, Angular momentum and Torque.",
+            "Conservation of angular momentum.",
+            "Calculation of moment of inertia for rectangular, cylindrical and spherical bodies.",
+            "Motion involving both translation and rotation."
+        ]
+    },
+    unit3: {
+        name: "Elasticity",
+        data: [
+            "Hooke’s law, Stress-strain diagram.",
+            "Elastic moduli – relation between elastic constants.",
+            "Poisson’s ratio – expression of Poisson’s ratio in terms of elastic constants.",
+            "Work done in stretching and twisting a wire."
+        ]
+    },
+    unit4: {
+        name: "Gravitation and Central Force Motion",
+        data: [
+            "Law of gravitation. Gravitational potential energy, self-energy.",
+            "Inertial and gravitational mass.",
+            "Potential and field due to spherical shell and solid sphere.",
+            "Motion of a particle under the central force field.",
+            "Two-body problem, its reduction to one-body problem and its solution.",
+            "Effective potential of a particle in gravitational field.",
+            "Trajectory of a particle in inverse-square force potential.",
+            "Kepler’s laws. Escape velocity, satellite in circular orbit and applications.",
+            "Geosynchronous orbits. Weightlessness."
+        ]
+    },
+    unit5: {
+        name: "Non-Inertial Systems",
+        data: [
+            "Non-inertial frames and fictitious forces.",
+            "Uniformly rotating frame.",
+            "Laws of physics in rotating coordinate systems.",
+            "Centrifugal force. Coriolis force and its applications.",
+            "Components of Velocity and Acceleration in Cylindrical and Spherical Coordinate Systems."
+        ]
+    }
+},
+          },
+          subject4: {
+            code: "UPHYMAJ-2(Practical)",
+            name: "Mechanics-I Lab",
+units: {
+    unit1: {
+        name: "List of Experiments",
+        data: [
+            "Measurements of volume of a hollow cylinder using Vernier calipers, Screw gauge, and Traveling microscope.",
+            "To determine the height of a building using a Sextant.",
+            "To study the motion of a spring and calculate (a) Spring Constant (b) Value of g.",
+            "To determine the Moment of Inertia of a Flywheel.",
+            "To determine g and velocity for a freely falling body using Digital Timing Technique.",
+            "To determine the moment of inertia of (a) cylindrical, (b) rectangular bar about an axis passing through its centre of mass.",
+            "To determine the value of g by Bar Pendulum.",
+            "To determine the value of g by Kater’s Pendulum.",
+            "Determination of rigidity modulus of the material of a wire by static method.",
+            "Determination of rigidity modulus of the material of a wire by dynamic method.",
+            "To determine the modulus of rigidity of a wire by Maxwell’s needle.",
+            "To determine the Young's Modulus of a wire by Optical Lever method.",
+            "To determine the elastic constants of a wire by Searle’s method."
+        ]
+    }
+},
+          },
         },
-   unit3: {
-                name: "Geometry I",
-                data: [
-                    "Understand the reflection properties of conics.",
-                    "Apply rotation of axes to second degree equations.",
-                    "Classify conics using the discriminant.",
-                    "Work with polar equations of conics."
-                ]
-            },
-            unit4: {
-                name: "Geometry II",
-               data: [
-                    "Analyze 3D shapes including spheres, cylindrical surfaces, central conicoids, paraboloids, and hyperboloids.",
-                    "Understand plane sections of conicoids and generating lines.",
-                    "Classify quadrics and graph standard quadric surfaces like cones and ellipsoids."
-                ]
-            }
-   
+      };
+    case "1phymin":
+            return {
+        stream: "Physic Minor",
+        year: "1st",
+        sem: "1",
+        subjects: {
+          subject1: {
+            code: "UPHYMIN-1(Theory)",
+            name: "Mechanics",
+units: {
+    unit1: {
+        name: "Vectors",
+        data: [
+            "Vector algebra.",
+            "Scalar and vector products, triple products.",
+            "Vector differentiation, gradient, divergence, Curl and their significance."
+        ]
+    },
+    unit2: {
+        name: "Ordinary Differential Equations",
+        data: [
+            "1st order homogeneous differential equations.",
+            "2nd order homogeneous differential equations with constant coefficients."
+        ]
+    },
+    unit3: {
+        name: "Laws of Motion",
+        data: [
+            "Frames of reference.",
+            "Newton’s Laws of motion.",
+            "Dynamics of a system of particles.",
+            "Centre of Mass."
+        ]
+    },
+    unit4: {
+        name: "Momentum and Energy",
+        data: [
+            "Conservation of momentum.",
+            "Work and energy.",
+            "Conservation of energy.",
+            "Motion of rockets."
+        ]
+    },
+    unit5: {
+        name: "Rotational Motion",
+        data: [
+            "Angular velocity and angular momentum.",
+            "Torque.",
+            "Conservation of angular momentum."
+        ]
+    },
+    unit6: {
+        name: "Oscillations",
+        data: [
+            "Simple harmonic motion.",
+            "Differential equation of SHM and its solutions.",
+            "Kinetic and Potential Energy, Total Energy and their time averages.",
+            "Damped oscillations."
+        ]
+    },
+    unit7: {
+        name: "Elasticity",
+        data: [
+            "Hooke’s law – Stress-strain diagram.",
+            "Elastic moduli – Relation between elastic constants.",
+            "Poisson’s ratio, Expression for Poisson’s ratio in terms of elastic constants.",
+            "Work done in stretching and twisting a wire – Twisting couple on a cylinder."
+        ]
+    }
+},
+          },
+        subject2: {
+            code: "UPHYMIN-1(Practical)",
+            name: "Mechanics",
+units: {
+    unit1: {
+        name: "List of Experiments",
+        data: [
+            "Measurements of volume of a hollow cylinder using Vernier calipers, Screw gauge, and Traveling microscope.",
+            "To determine the height of a building using a Sextant.",
+            "To study the motion of a spring and calculate (a) Spring Constant (b) Value of g.",
+            "To determine the Moment of Inertia of a Flywheel.",
+            "To determine g and velocity for a freely falling body using Digital Timing Technique.",
+            "To determine the moment of inertia of (a) cylindrical, (b) rectangular bar about an axis passing through its centre of mass.",
+            "To determine the value of g by Bar Pendulum.",
+            "To determine the value of g by Kater’s Pendulum.",
+            "Determination of rigidity modulus of the material of a wire by static method.",
+            "Determination of rigidity modulus of the material of a wire by dynamic method.",
+            "To determine the modulus of rigidity of a wire by Maxwell’s needle.",
+            "To determine the Young's Modulus of a wire by Optical Lever method.",
+            "To determine the elastic constants of a wire by Searle’s method."
+        ]
+    }
 },
           },
         },
