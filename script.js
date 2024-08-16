@@ -630,7 +630,7 @@ units: {
           },
         subject2: {
             code: "UPHYMIN-1(Practical)",
-            name: "Mechanics",
+            name: "Mechanics-Lab",
 units: {
     unit1: {
         name: "List of Experiments",
@@ -1521,66 +1521,6 @@ units: {
 
 
     //.......................................>>>>>>>>SCIENCE<<<<<<<<<<<<<<<<<<<................
-
-      return {
-        stream: "Math MIN",
-        year: "2nd",
-        sem: "3",
-        subjects: {
-          subject1: {
-            code: "UMATMIN20002",
-            name: "CALCULUS, GEOMETRY AND GROUP THEORY",
-            units: {
-    unit1: {
-        name: "Calculus I",
-        data: [
-            "Reduction formulae, derivations and illustrations of reduction formulae",
-            "∫ sinⁿx dx, ∫ cosⁿx dx, ∫ secⁿx dx, ∫ tanⁿx dx, ∫ (logx)ⁿ dx, ∫ sinⁿx cosᵐx dx, etc.",
-            "Successive derivatives, Leibnitz rule and its applications",
-            "Indeterminate forms, L'Hospital’s rule and its applications"
-        ]
-    },
-    unit2: {
-        name: "Calculus II",
-        data: [
-            "Volume and surface areas of solids formed by revolution of known plane curves and areas (simple problems only)",
-            "Concept of parameterizations of a curve",
-            "Envelopes, asymptotes, radius of curvature",
-            "Concavity, convexity, and inflection points"
-        ]
-    },
-    unit3: {
-        name: "Geometry I",
-        data: [
-            "2D: Rotation of axes and second-degree equations",
-            "Pair of straight lines",
-            "Classification of conics using the discriminant",
-            "Polar equations of conics"
-        ]
-    },
-    unit4: {
-        name: "Geometry II",
-        data: [
-            "3D: Spheres, cylindrical surfaces, cones, ellipsoids, paraboloids, hyperboloids",
-            "Classification of quadrics"
-        ]
-    },
-    unit5: {
-        name: "Group Theory",
-        data: [
-            "Equivalence relations, functions, permutations, even and odd permutations",
-            "Definitions and examples of Groups, finite and infinite groups, commutative groups",
-            "Elementary properties of groups",
-            "Some well-known groups: ℤₙ, 𝑈ₙ, 𝑀ₙ(𝑅), Klein’s 4-group, multiplicative group of 𝑛-th roots of unity, symmetric group 𝑆ₙ, etc.",
-            "Definition and examples of subgroup",
-            "Statement of necessary and sufficient condition for a subset of a group to be a subgroup and its simple applications"
-        ]
-    }
-},
-          },
-        },
-      };
-
 
    //.....................................>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEM 5<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<......................................................... 
 

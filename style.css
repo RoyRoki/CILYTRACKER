@@ -224,6 +224,9 @@ header p:hover {
   justify-content: center;
   align-items: center;
 }
+.close-btn {
+  -webkit-tap-highlight-color: transparent;
+}
 
 .close-btn::before,
 .close-btn::after {
@@ -312,7 +315,9 @@ header p:hover {
   background-color: #2828284f; 
   transform: translateY(0);
 }
-
+.sem button , .course input , .popup button{
+  -webkit-tap-highlight-color: transparent;
+}
 
 
 .infoheader {
@@ -377,6 +382,13 @@ header p:hover {
     font-size: 12px;
     padding: 8px 12px;
   }
+  header:hover {
+  background-color: rgb(233, 236, 236);
+ }
+ .sem:hover , .course:hover {
+  background:linear-gradient(to bottom, transparent, #d3cfcf17);
+}
+  
 }
 
 
