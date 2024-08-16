@@ -316,7 +316,7 @@ header p:hover {
   transform: translateY(0);
 }
 .sem button , .course input , .popup button{
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 
@@ -383,10 +383,10 @@ header p:hover {
     padding: 8px 12px;
   }
   header:hover {
-  background-color: rgb(233, 236, 236);
+  background-color: rgb(233, 236, 236) !important;
  }
  .sem:hover , .course:hover {
-  background:linear-gradient(to bottom, transparent, #d3cfcf17);
+  background:linear-gradient(to bottom, transparent, #d3cfcf17) !important;
 }
   
 }
