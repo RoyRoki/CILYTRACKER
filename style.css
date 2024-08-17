@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -44,7 +45,7 @@ details > summary {
 ul li {
   position: relative;
   transition: background-color 0.3s ease;
-  padding-left: .2em;
+  padding-left: 0.2em;
 }
 ul li::before {
   position: absolute;
@@ -71,7 +72,8 @@ ul li:last-child::after {
   display: none;
 }
 
-ul.tree > li:after , ul.tree > li::before {
+ul.tree > li:after,
+ul.tree > li::before {
   display: none;
 }
 
@@ -87,7 +89,7 @@ ul summary::before {
   height: 20px;
   border-radius: 50%;
   left: -1.48em;
-  top: .3em;
+  top: 0.3em;
   text-align: center;
   line-height: 1.2em;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -101,26 +103,24 @@ ul details[open] > summary::before {
   transform: rotate(180deg);
 }
 details[open] > summary {
-    color:green;
+  color: green;
 }
 details[open] > summary::before {
-    border-color: green;
+  border-color: green;
 }
 .checkbox {
-  position: relative;  
+  position: relative;
   bottom: -3px;
 }
 
 details p {
-  color:gray;
-  margin: .05em 0 0.1em 1.8em;
+  color: gray;
+  margin: 0.05em 0 0.1em 1.8em;
   transition: color 0.5s ease-in-out;
 }
 details p:hover {
-  color:black;
+  color: black;
 }
-
-
 
 header {
   display: flex;
@@ -161,7 +161,7 @@ header h1 {
   transition: color 0.5s ease-in-out;
 }
 header h1:hover {
-  color:#519e04;
+  color: #519e04;
 }
 header p {
   color: rgb(97, 98, 106);
@@ -169,7 +169,7 @@ header p {
   transition: color 0.5s ease-in-out;
 }
 header p:hover {
-  color:black;
+  color: black;
 }
 
 .popup-overlay {
@@ -197,7 +197,6 @@ header p:hover {
   }
 }
 
-
 .popup {
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 8px;
@@ -211,7 +210,7 @@ header p:hover {
   z-index: 1001;
 }
 .popsem {
-  justify-content:center !important;
+  justify-content: center !important;
   padding: 5px 30px 5px 30px !important;
 }
 
@@ -237,7 +236,7 @@ header p:hover {
 
 .close-btn::before,
 .close-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -275,28 +274,33 @@ header p:hover {
   font-size: 1em !important;
 }
 
-
-.sem , .course , .popsem {
+.sem,
+.course,
+.popsem {
   display: flex;
-  flex-wrap: nowrap; 
-  justify-content:stretch;
+  flex-wrap: nowrap;
+  justify-content: stretch;
   overflow-x: auto;
-  gap:10px;
-  padding:1em .5em 1em .5em;
+  gap: 10px;
+  padding: 1em 0.5em 1em 0.5em;
   margin-top: 0.2em;
-  background:linear-gradient(to bottom, transparent, #d3cfcf08);
-  box-shadow: 0 5px 25px RGB(26, 34, 39 / 10%);  
+  background: linear-gradient(to bottom, transparent, #d3cfcf08);
+  box-shadow: 0 5px 25px RGB(26, 34, 39 / 10%);
   transition: background-color 0.5s ease-in-out;
 }
-.sem:hover , .course:hover {
+.sem:hover,
+.course:hover {
   background-color: #c4bdbd81;
 }
-.course , .popsem {
+.course,
+.popsem {
   flex-wrap: wrap;
   overflow-x: auto;
 }
-.sem button , .course input , .popup button {
-  background-color: rgba(244, 244, 244, 0.402)#ecf0f1;
+.sem button,
+.course input,
+.popup button {
+  background-color: rgba(244, 244, 244, 0.402) #ecf0f1;
   color: rgb(97, 98, 106);
   border: 2px solid rgb(97, 98, 106);
   border-radius: 25px;
@@ -305,27 +309,31 @@ header p:hover {
   scale: 0.85;
   font-family: "Akaya Telivigala", system-ui;
   cursor: pointer;
-  transition: background-color 0.3s,color 0.2s, transform 0.2s; 
+  transition: background-color 0.3s, color 0.2s, transform 0.2s;
   box-shadow: 0 4px 8px rgba(52, 51, 51, 0.199);
 }
 .popsem button {
   scale: 1 !important;
 }
 
-.sem button:hover, .course input:hover, .popup button:hover {
+.sem button:hover,
+.course input:hover,
+.popup button:hover {
   background-color: #7ccf29;
   color: white;
   transform: translateY(-3px);
 }
 
-.sem button:active , .course input:active{
-  background-color: #2828284f; 
+.sem button:active,
+.course input:active {
+  background-color: #2828284f;
   transform: translateY(0);
 }
-.sem button , .course input , .popup button{
+.sem button,
+.course input,
+.popup button {
   -webkit-tap-highlight-color: transparent !important;
 }
-
 
 .infoheader {
   display: flex;
@@ -338,16 +346,14 @@ header p:hover {
 
 .infoheader h1 {
   font-size: 2em;
-  color: rgb(27, 27, 27); 
+  color: rgb(27, 27, 27);
   margin: 0;
-  
 }
-
 
 .infoheader > .subheader-row {
   display: flex;
-  flex-direction: row; 
-  justify-content: space-between; 
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .infoheader h2 {
@@ -390,69 +396,65 @@ header p:hover {
     padding: 8px 12px;
   }
   header:hover {
-  background-color: rgb(233, 236, 236) !important;
- }
- .sem:hover , .course:hover {
-  background:linear-gradient(to bottom, transparent, #d3cfcf17) !important;
+    background-color: rgb(233, 236, 236) !important;
+  }
+  .sem:hover,
+  .course:hover {
+    background: linear-gradient(to bottom, transparent, #d3cfcf17) !important;
+  }
 }
-  
-}
-
 
 /* Footer Styles */
 footer {
-    background:linear-gradient(to bottom, transparent, #8885857e);
-    color: #2d2b2b;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    margin-top: 17.5em;
-    width: 100%;
-    transition: color .5s ease-out , background-color 0.5s ease-in-out;
-    
+  background: linear-gradient(to bottom, transparent, #8885857e);
+  color: #2d2b2b;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  margin-top: 17.5em;
+  width: 100%;
+  transition: color 0.5s ease-out, background-color 0.5s ease-in-out;
 }
 footer:hover {
   color: green;
   background-color: #c4bdbd20;
-
 }
 
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .footer-content p {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .footer-content a {
-    color: #0b0b0b;
-    text-decoration: none;
-    transition: color .5s ease-out;
+  color: #0b0b0b;
+  text-decoration: none;
+  transition: color 0.5s ease-out;
 }
 
 .footer-content a:hover {
-    text-decoration: underline;
-    color: #0578cf;
+  text-decoration: underline;
+  color: #0578cf;
 }
 
 .social-media {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 .social-media a {
-    margin: 0 0.5rem;
-    color: #4a4545;
-    text-decoration: none;
+  margin: 0 0.5rem;
+  color: #4a4545;
+  text-decoration: none;
 }
 
 .social-media a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 
 .akaya-telivigala-regular {
   font-family: "Akaya Telivigala", system-ui;
