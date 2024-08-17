@@ -398,9 +398,12 @@ header p:hover {
   header:hover {
     background-color: rgb(233, 236, 236) !important;
   }
-  .sem:hover,
-  .course:hover {
+  .sem:hover, .course:hover {
     background: linear-gradient(to bottom, transparent, #d3cfcf17) !important;
+  }
+  .course {
+    max-height: 11.9em;
+    overflow-x: auto;
   }
 }
 
