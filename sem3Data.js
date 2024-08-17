@@ -423,44 +423,6 @@ function getData(semPstream) {
         },
       };
 
-    case "3sec":
-      return {
-        stream: "SEC ",
-        year: "2nd",
-        sem: "3",
-        subjects: {
-          subject1: {
-            code: "UENGSEC23003",
-            name: "SEC ENGLISH (English for Expression)",
-            units: {
-              unit1: {
-                name: "Writing Skill - I",
-                data: [
-                  "Review writing on films, books, cultural events, sports, etc.",
-                ],
-              },
-              unit2: {
-                name: "Writing Skill - II",
-                data: [
-                  "Argumentative writing (for or against a given topic/idea)",
-                  "Descriptive writing (description of persons, places, situations, incidents, etc.)",
-                ],
-              },
-              unit3: {
-                name: "Creative Writing",
-                data: [
-                  "Writing Newspaper articles",
-                  "Poems",
-                  "Stories",
-                  "Speeches",
-                  "Travelogues",
-                  "Dialogues",
-                ],
-              },
-            },
-          },
-        },
-      };
     //.......................................>>>>>>>>SCIENCE<<<<<<<<<<<<<<<<<<<................
     case "3bcamaj":
       return {
@@ -1026,6 +988,83 @@ function getData(semPstream) {
                   "Bubble Sort",
                   "Insertion Sort",
                   "Comparison of Sorting Techniques",
+                ],
+              },
+            },
+          },
+        },
+      };
+    case "3csmin":
+      return {
+        stream: "CS MIN",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UCMSMIN20002",
+            name: "Programming in C",
+            units: {
+              unit1: {
+                name: "Introduction to C",
+                data: [
+                  "History of C",
+                  "Using main() function",
+                  "Compiling and Executing Simple Programs in C",
+                ],
+              },
+              unit2: {
+                name: "Data Types, Variables, Constants, Operators and Basic I/O",
+                data: [
+                  "Declaring, Defining and Initializing Variables",
+                  "Scope of Variables",
+                  "Using Named Constants",
+                  "Keywords",
+                  "Data Types",
+                  "Casting of Data Types",
+                  "Operators (Arithmetic, Logical and Bitwise)",
+                  "Using Comments in programs",
+                  "Character I/O (getc, getchar, putc, putchar, etc.)",
+                  "Formatted and Console I/O (printf(), scanf())",
+                  "Using Basic Header Files (stdio.h, conio.h, stdlib.h, etc.)",
+                ],
+              },
+              unit3: {
+                name: "Expressions, Conditional Statements and Iterative Statements",
+                data: [
+                  "Simple Expressions in C (Unary Operator Expressions, Binary Operator Expressions)",
+                  "Understanding Operators Precedence in Expressions",
+                  "Conditional Statements (if construct, switch-case construct)",
+                  "Understanding syntax and utility of Iterative Statements (while, do-while, for loops)",
+                  "Use of break and continue in Loops",
+                  "Using Nested Statements (Conditional and Iterative)",
+                ],
+              },
+              unit4: {
+                name: "Functions and Arrays",
+                data: [
+                  "Utility of functions",
+                  "Call by Value",
+                  "Call by Reference",
+                  "Functions returning value",
+                  "Void functions",
+                  "Return data type of functions",
+                  "Function parameters",
+                  "Differentiating between Declaration and Definition of Functions",
+                  "Functions with variable number of Arguments",
+                  "Creating and Using One Dimensional Arrays",
+                  "Manipulating array elements using loops",
+                  "Use of Various types of arrays (integer, float, character arrays/Strings)",
+                  "Two-dimensional Arrays (Declaring, Defining, Initializing, Working with Rows and Columns)",
+                ],
+              },
+              unit5: {
+                name: "Derived Data Types",
+                data: [
+                  "Understanding utility of structures and unions",
+                  "Declaring, initializing and using simple structures and unions",
+                  "Manipulating individual members of structures and unions",
+                  "Array of Structures",
+                  "Individual data members as structures",
                 ],
               },
             },
