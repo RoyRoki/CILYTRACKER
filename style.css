@@ -338,9 +338,9 @@ header p:hover {
 
 .infoheader h1 {
   font-size: 2em;
-  color: #519e04;
+  color: rgb(27, 27, 27); 
   margin: 0;
-   font-family: "Akaya Telivigala", system-ui;
+  
 }
 
 
