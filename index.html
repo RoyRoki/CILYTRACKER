@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="University of North Bengal Syllabus Tracker: Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app." />
-    <meta name="keywords" content="University of North Bengal, syllabus tracker, study sites, NBU, semester, subject" />
+    <meta
+      name="description"
+      content="University of North Bengal Syllabus Tracker: Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app."
+    />
+    <meta
+      name="keywords"
+      content="University of North Bengal, syllabus tracker, study sites, NBU, semester, subject"
+    />
     <meta name="author" content="Roy Roki" />
     <meta property="og:title" content="Cily Tracker - Find Your Syllabus NBU" />
-    <meta property="og:description" content="Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app." />
+    <meta
+      property="og:description"
+      content="Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app."
+    />
     <meta property="og:image" content="public/slylogox.png" />
     <meta property="og:url" content="https://cilytracker.web.app/" />
     <meta name="twitter:card" content="public/slylogox.png" />
-    <meta name="twitter:title" content="Cily Tracker - Find Your Syllabus NBU" />
-    <meta name="twitter:description" content="Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app." />
+    <meta
+      name="twitter:title"
+      content="Cily Tracker - Find Your Syllabus NBU"
+    />
+    <meta
+      name="twitter:description"
+      content="Enter your semester and subject to view a detailed syllabus and track your academic progress with ease using this web app."
+    />
     <meta name="twitter:image" content="public/slylogox.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="public/slylogox.png" type="image/png" />
     <title>Cily Tracker - Find Your Syllabus NBU</title>
   </head>
@@ -48,62 +66,121 @@
         </div>
       </div>
     </div>
-<nav>
-     <div class="sem">
-      <button onclick="setSem(1)">sem1</button>
-      <button onclick="setSem(2)">sem2</button>
-      <button onclick="setSem(3)">sem3</button>
-      <button onclick="setSem(4)">sem4</button>
-      <button onclick="setSem(5)">sem5</button>
-      <button onclick="setSem(6)">sem6</button>
-      <button onclick="setSem(7)">sem7</button>
-      <button onclick="setSem(8)">sem8</button>
-    </div> 
+    <nav>
+      <div class="sem">
+        <button onclick="setSem(1)">sem1</button>
+        <button onclick="setSem(2)">sem2</button>
+        <button onclick="setSem(3)">sem3</button>
+        <button onclick="setSem(4)">sem4</button>
+        <button onclick="setSem(5)">sem5</button>
+        <button onclick="setSem(6)">sem6</button>
+        <button onclick="setSem(7)">sem7</button>
+        <button onclick="setSem(8)">sem8</button>
+      </div>
 
-    <div class="course">
-      <input type="button" value="Science" onclick="loadCourse('sci')">
-      <input type="button" value="Arts" onclick="loadCourse('arts')">
-      <div class="sci">
-            <input type="button" value="BCA MAJ" onclick="loadTracker('bcamaj')" />
-            <input type="button" value="CS MAJ" onclick="loadTracker('csmaj')" />
-            <input type="button" value="PHYSIC MAJ" onclick="loadTracker('phymaj')" />
-            <input type="button" value="PHYSIC MIN" onclick="loadTracker('phymin')" />
-            <input
-              type="button"
-              value="MATH MAJ"
-              onclick="loadTracker('mathmaj')"
-            />
-            <input
-              type="button"
-              value="MATH MIN / DSC"
-              onclick="loadTracker('mathmin')"
-            />
-       </div>
-       <div class="arts">
-            <input type="button" value="English Maj" onclick="loadTracker('bcamaj')" />
-            <input type="button" value="Bengali" onclick="loadTracker('csmaj')" />
-            <input type="button" value="Sociology" onclick="loadTracker('phymaj')" />
-            <input type="button" value="Hindi" onclick="loadTracker('phymin')" />
-       </div>
-    </div>
+      <div class="course">
+        <div class="sci">
+          <input
+            type="button"
+            value="BCA MAJ"
+            onclick="loadTracker('bcamaj')"
+          />
+          <input type="button" value="CS MAJ" onclick="loadTracker('csmaj')" />
+          <input
+            type="button"
+            value="PHYSIC MAJ"
+            onclick="loadTracker('phymaj')"
+          />
+          <input
+            type="button"
+            value="PHYSIC MIN"
+            onclick="loadTracker('phymin')"
+          />
+          <input
+            type="button"
+            value="MATH MAJ"
+            onclick="loadTracker('mathmaj')"
+          />
+          <input
+            type="button"
+            value="MATH MIN / DSC"
+            onclick="loadTracker('mathmin')"
+          />
+        </div>
+        <div class="arts">
+          <input
+            type="button"
+            value="বাংলার MAJ"
+            onclick="loadTracker('bngmaj')"
+          />
+          <input
+            type="button"
+            value="বাংলার MIN"
+            onclick="loadTracker('bngmin')"
+          />
+          <input
+            type="button"
+            value="ENGLISH MAJ"
+            onclick="loadTracker('engmaj')"
+          />
+          <input
+            type="button"
+            value="ENGLISH MIN"
+            onclick="loadTracker('engmin')"
+          />
+        </div>
 
-</nav>
+        <div class="others">
+          <input
+            type="button"
+            value="AEC Subjects"
+            onclick="loadTracker('aec')"
+          />
+          <input
+            type="button"
+            value="SEC Subjects"
+            onclick="loadTracker('sec')"
+          />
+        </div>
+      </div>
+    </nav>
 
-<main>
-  <div id="show"></div>
-</main>
-
+    <main>
+      <div id="show"></div>
+    </main>
 
     <footer>
-       <div class="footer-content">
-            <p>&copy; 2024 Cily Tracker. All rights reserved.</p>
-            <p><a href="mailto:cilytracker@gmail.com" target="_blank" rel="noopener noreferrer">cilytracker@gmail.com</a></p>
-            <div class="social-media">
-                <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://twitter.com/MRrokiroy" target="_blank" rel="noopener noreferrer">Twitter</a>
-                <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a>
-            </div>
+      <div class="footer-content">
+        <p>&copy; 2024 Cily Tracker. All rights reserved.</p>
+        <p>
+          <a
+            href="mailto:cilytracker@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >cilytracker@gmail.com</a
+          >
+        </p>
+        <div class="social-media">
+          <a
+            href="https://facebook.com/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Facebook</a
+          >
+          <a
+            href="https://twitter.com/MRrokiroy"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Twitter</a
+          >
+          <a
+            href="https://instagram.com/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
         </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>

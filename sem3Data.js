@@ -1,12 +1,467 @@
-
 function getData(semPstream) {
   switch (semPstream) {
-    //.....................................>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEM 3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<......................................................... 
+    //.....................................>>>>>>>>>>>>>>>>>>>>>>>>>>>>SEM 3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<.........................................................
 
     //.......................................>>>>>>>>ARTS<<<<<<<<<<<<<<<<<<<................
 
+    case "3bngmaj":
+      return {
+        stream: "বাংলার MAJ",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UBNGMAJ23003",
+            name: "ভাষাতত্ত্ব ও ভাষাবিজ্ঞান",
+            units: {
+              unit1: {
+                name: "ইন্দো-ইউরোপীয় থেকে বাংলা ভাষার উদ্ভব",
+                data: ["ইন্দো-ইউরোপীয় থেকে বাংলা ভাষার উদ্ভব"],
+              },
+              unit2: {
+                name: "বাংলা ভাষার বিভিন্ন স্তর",
+                data: ["প্রাচীন বাংলা", "মধ্য বাংলা", "আধুনিক বাংলা"],
+              },
+              unit3: {
+                name: "বাংলা উপভাষা ",
+                data: [
+                  "রাঢ়ি",
+                  "বঙ্গালি",
+                  "ঝাড়খণ্ডি",
+                  "বরেন্দ্রি",
+                  "কামরূপি/রাজবংশি",
+                ],
+              },
+              unit4: {
+                name: "বাংলা ধ্বনিতত্ত্ব",
+                data: ["মৌলিক স্বরধ্বনি", "ব্যঞ্জনধ্বনি", "দ্বিস্বর"],
+              },
+              unit5: {
+                name: "বাংলা রূপতত্ত্ব",
+                data: ["রূপমূল", "শব্দ", "পদ-প্রকার"],
+              },
+              unit6: {
+                name: "বাংলা রূপতত্ত্ব",
+                data: ["রূপমূল", "শব্দ", "পদ-প্রকার"],
+              },
+              unit7: {
+                name: "ধ্বনি পরিবর্তনের কারণ ও সূত্র",
+                data: ["ধ্বনি পরিবর্তনের কারণ ও সূত্র"],
+              },
+              unit7: {
+                name: "শব্দার্থ পরিবর্তনের কারণ ও সূত্র",
+                data: ["শব্দার্থ পরিবর্তনের কারণ ও সূত্র"],
+              },
+              unit8: {
+                name: "ভাষাতাত্ত্বিক টীকা",
+                data: [
+                  "স্বরসংগতি",
+                  "স্বরভক্তি বা বিপ্রকর্ষ",
+                  "স্বরাগম",
+                  "স্বরলোপ",
+                  "সমীভবন",
+                  "বর্ণবিপর্যয়",
+                  "নাসিক্যীভবন",
+                  "অপিনিহিতি",
+                  "অভিশ্রুতি",
+                  "মুণ্ডমাল শব্দ",
+                  "মিশ্রভাষা",
+                  "অপভাষা",
+                  "শ্রুতিধ্বনি",
+                  "সাদৃশ্য",
+                  "জোড়কলম শব্দ",
+                  "লোকনিরুক্তি",
+                  "IPA (International Phonetic Alphabet)",
+                ],
+              },
+            },
+          },
+          subject2: {
+            code: "UBNGMAJ23004",
+            name: "মধ্যযুগের বাংলা আখ্যানকাব্য",
+            units: {
+              unit1: {
+                name: "মুকুন্দ চক্রবর্তী",
+                data: ["চণ্ডীমঙ্গল (আখেটিক খণ্ড)"],
+              },
+              unit2: {
+                name: "কেতকাদাস ক্ষেমানন্দ",
+                data: ["মনসামঙ্গল"],
+              },
+              unit3: {
+                name: "ময়মনসিংহগীতিকা",
+                data: ["মহুয়া ও চন্দ্রাবতী পালা"],
+              },
+            },
+          },
+          subject3: {
+            name: "ছন্দ, অলংকার",
+            code: "UBNGMAJ23005",
+            units: {
+              unit1: {
+                name: "ছন্দ",
+                data: [
+                  "সংজ্ঞা ও স্বরূপ : দল, মাত্রা, পর্ব, পঙ্ক্তি, ছেদ, যতি, লয়",
+                  "বাংলা ছন্দ পরিচয়দলবৃত্ত, কলাবৃত্ত, মিশ্রকলাবৃত্ত, প্রত্নকলাবৃত্ত, গদ্যছন্দ",
+                  "ছন্দবন্ধ : পয়ার, প্রবহমান পয়ার, অমিত্রাক্ষর, মহাপয়ার, মুক্তক",
+                  "ছন্দলিপি নির্ণয়",
+                ],
+              },
+              unit2: {
+                name: "অলংকার",
+                data: [
+                  "অলংকার : পরিচয় ও শ্রেণিবিভাগ (শব্দালংকার ও অর্থালংকার)",
+                  "সংজ্ঞা ও স্বরূপ",
+                  "শব্দালংকার: অনুপ্রাস, যমক, শ্লেষ, বক্রোক্তি, পুনরুক্তবদাভাস",
+                  "অর্থালংকার ",
+                  "সাদৃশ্যমূলক : উপমা, রূপক, উৎপ্রেক্ষা, সন্দেহ, নিশ্চয়, ভ্রান্তিমান, অপহৃতি, সমাসোক্তি, ব্যতিরেক, অতিশয়োক্তি",
+                  "বিরোধমূলক : বিরোধাভাস, বিভাবনা, বিশেষোক্তি, অসংগতি",
+                  "গূঢ়ার্থ-প্রতীতিমূলক: অপ্রস্তুত-প্রশংসা, অর্থান্তরন্যাস, ব্যাজস্তুতি",
+                  "অলংকার নির্ণয়",
+                ],
+              },
+            },
+          },
+          subject4: {
+            name: "বাংলা ভাষা উপস্থাপন (SEC)",
+            code: "UBNGSEC23003",
+            units: {
+              unit1: {
+                name: "বাংলা ভাষা উপস্থাপন",
+                data: [
+                  "প্রবন্ধ রচনা",
+                  "ইংরেজি থেকে বঙ্গানুবাদ",
+                  "গবেষণামূলক নিবন্ধের খসড়া উপস্থাপন (সেমিনার প্রেজেন্টেশন)",
+                  "দলবদ্ধ আলোচনা (গ্রুপ ডিসকাশন)",
+                  "চাকরির সাক্ষাৎকার প্রদান (ইন্টারভিউ দেওয়া)",
+                  "বাংলা টাইপিং (হাতে কলমে প্রয়োগসহ)",
+                ],
+              },
+            },
+          },
+        },
+      };
+    case "3bngmin":
+      return {
+        stream: "বাংলার MIN ক অথবা খ",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UBNGMIN20002",
+            name: "(ক) ছন্দ ও অলংকার",
+            units: {
+              unit1: {
+                name: "ছন্দ",
+                data: [
+                  "সংজ্ঞা ও স্বরূপ : দল, মাত্রা, পর্ব, পঙ্ক্তি, ছেদ, যতি, লয়",
+                  "বাংলা ছন্দ পরিচয়দলবৃত্ত, কলাবৃত্ত, মিশ্রকলাবৃত্ত, প্রত্নকলাবৃত্ত, গদ্যছন্দ",
+                  "ছন্দবন্ধ : পয়ার, প্রবহমান পয়ার, অমিত্রাক্ষর, মহাপয়ার, মুক্তক",
+                  "ছন্দলিপি নির্ণয়",
+                ],
+              },
+              unit2: {
+                name: "অলংকার",
+                data: [
+                  "অলংকার : পরিচয় ও শ্রেণিবিভাগ (শব্দালংকার ও অর্থালংকার)",
+                  "সংজ্ঞা ও স্বরূপ",
+                  "শব্দালংকার: অনুপ্রাস, যমক, শ্লেষ, বক্রোক্তি, পুনরুক্তবদাভাস",
+                  "অর্থালংকার ",
+                  "সাদৃশ্যমূলক : উপমা, রূপক, উৎপ্রেক্ষা, সন্দেহ, নিশ্চয়, ভ্রান্তিমান, অপহৃতি, সমাসোক্তি, ব্যতিরেক, অতিশয়োক্তি",
+                  "বিরোধমূলক : বিরোধাভাস, বিভাবনা, বিশেষোক্তি, অসংগতি",
+                  "গূঢ়ার্থ-প্রতীতিমূলক: অপ্রস্তুত-প্রশংসা, অর্থান্তরন্যাস, ব্যাজস্তুতি",
+                  "অলংকার নির্ণয়",
+                ],
+              },
+            },
+          },
+          subject2: {
+            code: "UBNGMIN20002",
+            name: "(খ) উপন্যাস পরিচয় ও বাংলা উপন্যাস",
+            units: {
+              unit1: {
+                name: "উপন্যাসের পরিচয়",
+                data: [
+                  "উপন্যাসের সংজ্ঞা",
+                  "স্বরূপ ও বৈশিষ্ট্য",
+                  "বাংলা উপন্যাসের সূচনা",
+                ],
+              },
+              unit2: {
+                name: "উপন্যাসের রূপরীতি",
+                data: [
+                  "রোমান্স",
+                  "ঐতিহাসিক উপন্যাস",
+                  "সামাজিক উপন্যাস",
+                  "আঞ্চলিক উপন্যাস",
+                  "মনস্তাত্ত্বিক উপন্যাস",
+                  "রাজনৈতিক উপন্যাস",
+                ],
+              },
+              unit3: {
+                name: "বঙ্কিমচন্দ্র চট্টোপাধ্যায়",
+                data: ["কপালকুণ্ডলা"],
+              },
+              unit4: {
+                name: "রবীন্দ্রনাথ ঠাকুর",
+                data: ["চোখের বালি"],
+              },
+            },
+          },
+        },
+      };
+    case "3engmaj":
+      return {
+        stream: "ENGLISH MIN",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UENGMAJ23003",
+            name: "Indian Classical Literature in Translation",
+            units: {
+              unit1: {
+                name: "Understanding Key Concepts in Indian Classical Literature",
+                data: [
+                  "The Indian Epic Tradition: Themes and Conventions",
+                  "The Indian Epic and the Woman Question",
+                  "Alankara, Rasa and Bhava",
+                  "Dharma and the Heroic",
+                ],
+              },
+              unit2: {
+                name: "Indian Classical Drama in Translation",
+                data: [
+                  "Kalidasa. Abhijnana Shakuntalam. The Loom of Time. Trans. By Chandra Rajan. New Delhi: Penguin, 1989.",
+                  "Vyasa. 'The Dicing', 'The Sequel to Dicing', 'The Book of Assembly Hall', 'The Temptation of Karna', Book V 'The Book of Effort'. The Mahabharata. Ed. J.A.B. Van Buitenen. Chicago: Brill, 1975. pp. 106-69.",
+                  "Sudraka. Mrcchakatika. Trans. By M. M. Ramachandra Kale. New Delhi: Motilal Banarasidas, 1962.",
+                ],
+              },
+            },
+          },
+          subject2: {
+            code: "UENGMAJ23004",
+            name: "From the Beginning to the 16th Century",
+            units: {
+              unit1: {
+                name: "Historical and Literary Topics",
+                data: [
+                  "Old English Heroic Poetry",
+                  "Old English Elegies",
+                  "Old English Christian Poetry",
+                  "The Beginning of Prose",
+                  "Alliterative Poems",
+                  "Middle English Romances",
+                  "Religious Dream Allegories",
+                ],
+              },
+              unit2: {
+                name: "Literature and Literary Criticism",
+                data: [
+                  "Geoffrey Chaucer: 'Prologue' to The Canterbury Tales, 'Prologue' to The Wife of Bath’s Tale",
+                  "Philip Sidney: An Apology for Poetry",
+                  "Edmund Spenser: The Faerie Queene, Book I",
+                  "Francis Bacon: Of Adversity, Of Truth, Of Studies, Of Travel, Of Friendship, Of Youth and Age",
+                ],
+              },
+            },
+          },
+          subject3: {
+            name: "Elizabethan and Jacobean Poetry",
+            code: "UENGMAJ23005",
+            units: {
+              unit1: {
+                name: "Historical and Literary Topics",
+                data: [
+                  "The Renaissance and its impact on contemporary British Literature",
+                  "Humanism and its bearings on literature",
+                  "Elizabethan Poetry",
+                  "Metaphysical Poetry — Distinctive Features",
+                ],
+              },
+              unit2: {
+                name: "Poetry",
+                data: [
+                  "Sonnets from Spenser’s Amoretti: No: LXVI: 'Like as a Huntsman', LVII: 'Sweet Warrior', LXXV: 'One day I Wrote Her Name'",
+                  "William Shakespeare: Sonnet Nos. 18, 29, 30, 64, 65, 137",
+                  "John Donne: The Sunne Rising, The Good Morrow, The Anniversarie, A Valediction: Forbidding Mourning",
+                  "Andrew Marvell: The Garden, To His Coy Mistress",
+                  "Henry Vaughan: The Retreat, Regeneration",
+                  "George Herbert: The Pulley, The Collar",
+                ],
+              },
+            },
+          },
+          subject4: {
+            name: "English for Expression (SEC)",
+            code: "UENGSEC23003",
+            units: {
+              unit1: {
+                name: "Writing Skill - I",
+                data: [
+                  "Review writing on films, books, cultural events, sports, etc.",
+                ],
+              },
+              unit2: {
+                name: "Writing Skill - II",
+                data: [
+                  "Argumentative writing (for or against a given topic/idea)",
+                  "Descriptive writing (description of persons, places, situations, incidents, etc.)",
+                ],
+              },
+              unit3: {
+                name: "Creative Writing",
+                data: [
+                  "Writing Newspaper articles",
+                  "Poems",
+                  "Stories",
+                  "Speeches",
+                  "Travelogues",
+                  "Dialogues",
+                ],
+              },
+            },
+          },
+        },
+      };
+    case "3engmin":
+      return {
+        stream: "ENGLISH MINOR",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UENGMIN20002",
+            name: "Understanding Drama",
+            units: {
+              unit1: {
+                name: "Key Terms in Drama",
+                data: [
+                  "Anagnorisis",
+                  "Peripeteia",
+                  "Chorus",
+                  "Climax",
+                  "Dramatic irony",
+                  "Hamartia",
+                  "Hubris",
+                  "Soliloquy",
+                  "Three Unities",
+                  "In Media Res",
+                ],
+              },
+              unit2: {
+                name: "William Shakespeare",
+                data: ["Macbeth", "Twelfth Night"],
+              },
+              unit3: {
+                name: "Modern Drama",
+                data: [
+                  "John Galsworthy: Justice",
+                  "George Bernard Shaw: Arms and the Man",
+                ],
+              },
+            },
+          },
+        },
+      };
+    case "3aec":
+      return {
+        stream: "AEC ",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UBNGAEM20002",
+            name: "AEC বাংলা",
+            units: {
+              unit1: {
+                name: "বাংলা সাহিত্যের বিবিধ পাঠ",
+                data: [
+                  "সুকুমার রায় : লক্ষ্মণের শক্তিশেল",
+                  "রবীন্দ্রনাথ ঠাকুর : সবুজের অভিযান",
+                  "নজরুল ইসলাম : সাম্যবাদী",
+                  "শরৎচন্দ্র চট্টোপাধ্যায়: মহেশ",
+                  "রাজশেখর বসু : বৈজ্ঞানিক বুদ্ধি",
+                ],
+              },
+            },
+          },
+          subject2: {
+            code: "UENGAEM20002",
+            name: "AEC ALTERNATIVE ENGLISH",
+            units: {
+              unit1: {
+                name: "Literature and the Marginalized",
+                data: [
+                  "Mahesh Dattani: Tara",
+                  "Temsula Ao: The Jungle Major, The Last Song (from These Hills Called Home: Stories from a War Zone)",
+                  "Meena Kandaswamy: Aggression, Apologies for Living on",
+                ],
+              },
+            },
+          },
+          subject3: {
+            code: "UENGAEL20002",
+            name: "AEC English Compulsory",
+            units: {
+              unit1: {
+                name: " Literary Appreciation I",
+                data: [
+                  "Anton Chekhov: The Bet",
+                  "Ruskin Bond: The Blue Umbrella",
+                ],
+              },
+              unit2: {
+                name: " Literary Appreciation II",
+                data: [
+                  "St. John Greer Ervine : Progress",
+                  "Lady Gregory: Rising of the Moon",
+                ],
+              },
+            },
+          },
+        },
+      };
 
-   //.......................................>>>>>>>>SCIENCE<<<<<<<<<<<<<<<<<<<................
+    case "3sec":
+      return {
+        stream: "SEC ",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UENGSEC23003",
+            name: "SEC ENGLISH (English for Expression)",
+            units: {
+              unit1: {
+                name: "Writing Skill - I",
+                data: [
+                  "Review writing on films, books, cultural events, sports, etc.",
+                ],
+              },
+              unit2: {
+                name: "Writing Skill - II",
+                data: [
+                  "Argumentative writing (for or against a given topic/idea)",
+                  "Descriptive writing (description of persons, places, situations, incidents, etc.)",
+                ],
+              },
+              unit3: {
+                name: "Creative Writing",
+                data: [
+                  "Writing Newspaper articles",
+                  "Poems",
+                  "Stories",
+                  "Speeches",
+                  "Travelogues",
+                  "Dialogues",
+                ],
+              },
+            },
+          },
+        },
+      };
+    //.......................................>>>>>>>>SCIENCE<<<<<<<<<<<<<<<<<<<................
     case "3bcamaj":
       return {
         stream: "BCA Maj",
@@ -795,52 +1250,52 @@ function getData(semPstream) {
             code: "UMATMIN20002",
             name: "CALCULUS, GEOMETRY AND GROUP THEORY",
             units: {
-    unit1: {
-        name: "Calculus I",
-        data: [
-            "Reduction formulae, derivations and illustrations of reduction formulae",
-            "∫ sinⁿx dx, ∫ cosⁿx dx, ∫ secⁿx dx, ∫ tanⁿx dx, ∫ (logx)ⁿ dx, ∫ sinⁿx cosᵐx dx, etc.",
-            "Successive derivatives, Leibnitz rule and its applications",
-            "Indeterminate forms, L'Hospital’s rule and its applications"
-        ]
-    },
-    unit2: {
-        name: "Calculus II",
-        data: [
-            "Volume and surface areas of solids formed by revolution of known plane curves and areas (simple problems only)",
-            "Concept of parameterizations of a curve",
-            "Envelopes, asymptotes, radius of curvature",
-            "Concavity, convexity, and inflection points"
-        ]
-    },
-    unit3: {
-        name: "Geometry I",
-        data: [
-            "2D: Rotation of axes and second-degree equations",
-            "Pair of straight lines",
-            "Classification of conics using the discriminant",
-            "Polar equations of conics"
-        ]
-    },
-    unit4: {
-        name: "Geometry II",
-        data: [
-            "3D: Spheres, cylindrical surfaces, cones, ellipsoids, paraboloids, hyperboloids",
-            "Classification of quadrics"
-        ]
-    },
-    unit5: {
-        name: "Group Theory",
-        data: [
-            "Equivalence relations, functions, permutations, even and odd permutations",
-            "Definitions and examples of Groups, finite and infinite groups, commutative groups",
-            "Elementary properties of groups",
-            "Some well-known groups: ℤₙ, 𝑈ₙ, 𝑀ₙ(𝑅), Klein’s 4-group, multiplicative group of 𝑛-th roots of unity, symmetric group 𝑆ₙ, etc.",
-            "Definition and examples of subgroup",
-            "Statement of necessary and sufficient condition for a subset of a group to be a subgroup and its simple applications"
-        ]
-    }
-},
+              unit1: {
+                name: "Calculus I",
+                data: [
+                  "Reduction formulae, derivations and illustrations of reduction formulae",
+                  "∫ sinⁿx dx, ∫ cosⁿx dx, ∫ secⁿx dx, ∫ tanⁿx dx, ∫ (logx)ⁿ dx, ∫ sinⁿx cosᵐx dx, etc.",
+                  "Successive derivatives, Leibnitz rule and its applications",
+                  "Indeterminate forms, L'Hospital’s rule and its applications",
+                ],
+              },
+              unit2: {
+                name: "Calculus II",
+                data: [
+                  "Volume and surface areas of solids formed by revolution of known plane curves and areas (simple problems only)",
+                  "Concept of parameterizations of a curve",
+                  "Envelopes, asymptotes, radius of curvature",
+                  "Concavity, convexity, and inflection points",
+                ],
+              },
+              unit3: {
+                name: "Geometry I",
+                data: [
+                  "2D: Rotation of axes and second-degree equations",
+                  "Pair of straight lines",
+                  "Classification of conics using the discriminant",
+                  "Polar equations of conics",
+                ],
+              },
+              unit4: {
+                name: "Geometry II",
+                data: [
+                  "3D: Spheres, cylindrical surfaces, cones, ellipsoids, paraboloids, hyperboloids",
+                  "Classification of quadrics",
+                ],
+              },
+              unit5: {
+                name: "Group Theory",
+                data: [
+                  "Equivalence relations, functions, permutations, even and odd permutations",
+                  "Definitions and examples of Groups, finite and infinite groups, commutative groups",
+                  "Elementary properties of groups",
+                  "Some well-known groups: ℤₙ, 𝑈ₙ, 𝑀ₙ(𝑅), Klein’s 4-group, multiplicative group of 𝑛-th roots of unity, symmetric group 𝑆ₙ, etc.",
+                  "Definition and examples of subgroup",
+                  "Statement of necessary and sufficient condition for a subset of a group to be a subgroup and its simple applications",
+                ],
+              },
+            },
           },
         },
       };
