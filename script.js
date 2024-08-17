@@ -234,8 +234,8 @@ function homeInfoHeader() {
   const h1 = document.createElement("h1");
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
-  p.textContent = `Enter Semester`;
-  h2.textContent = ` Year`;
+  p.textContent = `Year`;
+  h2.textContent = `Enter Semester`;
   h1.textContent = `Enter Course`;
 
   const subheaderRow = document.createElement("div");
