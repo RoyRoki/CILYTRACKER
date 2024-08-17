@@ -61,21 +61,32 @@
     </div> 
 
     <div class="course">
-      <input type="button" value="BCA MAJ" onclick="showSlyTracker('bcamaj')" />
-      <input type="button" value="CS MAJ" onclick="showSlyTracker('csmaj')" />
-      <input type="button" value="PHYSIC MAJ" onclick="showSlyTracker('phymaj')" />
-      <input type="button" value="PHYSIC MIN" onclick="showSlyTracker('phymin')" />
-      <input
-        type="button"
-        value="MATH MAJ"
-        onclick="showSlyTracker('mathmaj')"
-      />
-      <input
-        type="button"
-        value="MATH MIN / DSC"
-        onclick="showSlyTracker('mathmin')"
-      />
+      <input type="button" value="Science" onclick="loadCourse('sci')">
+      <input type="button" value="Arts" onclick="loadCourse('arts')">
+      <div class="sci">
+            <input type="button" value="BCA MAJ" onclick="loadTracker('bcamaj')" />
+            <input type="button" value="CS MAJ" onclick="loadTracker('csmaj')" />
+            <input type="button" value="PHYSIC MAJ" onclick="loadTracker('phymaj')" />
+            <input type="button" value="PHYSIC MIN" onclick="loadTracker('phymin')" />
+            <input
+              type="button"
+              value="MATH MAJ"
+              onclick="loadTracker('mathmaj')"
+            />
+            <input
+              type="button"
+              value="MATH MIN / DSC"
+              onclick="loadTracker('mathmin')"
+            />
+       </div>
+       <div class="arts">
+            <input type="button" value="English Maj" onclick="loadTracker('bcamaj')" />
+            <input type="button" value="Bengali" onclick="loadTracker('csmaj')" />
+            <input type="button" value="Sociology" onclick="loadTracker('phymaj')" />
+            <input type="button" value="Hindi" onclick="loadTracker('phymin')" />
+       </div>
     </div>
+
 </nav>
 
 <main>
