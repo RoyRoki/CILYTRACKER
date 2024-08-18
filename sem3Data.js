@@ -422,7 +422,51 @@ function getData(semPstream) {
           },
         },
       };
-
+    case "3edcmin":
+      return {
+        stream: "EDCATION  MINOR",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UEDCMIN20002",
+            name: "Psychological Foundation of Education",
+            units: {
+              unit1: {
+                name: "Educational Psychology and Development",
+                data: [
+                  "Definition, Nature and Scope; Distinction between Psychology and Educational Psychology",
+                  "Growth and Development: Stages and aspects of development in human life, Physical, Social, Emotional, Cognitive and Language development of Infancy, Childhood and Adolescence period and respective educational programmes",
+                ],
+              },
+              unit2: {
+                name: "Learning",
+                data: [
+                  "Definition and characteristics of Learning, Factors influencing Learning",
+                  "Theories of Learning: Classical and Operant Conditioning, Trial and Error, and Insightful Learning",
+                  "Memorization: LTM, STM, Principles of economy involved in Memorization, Causes of Forgetting",
+                ],
+              },
+              unit3: {
+                name: "Intelligence",
+                data: [
+                  "Intelligence: Definition and Types",
+                  "Theories of Intelligence: Spearman, Thurstone, Guilford",
+                  "Characteristics of Verbal and Non-Verbal Tests of Intelligence",
+                ],
+              },
+              unit4: {
+                name: "Personality",
+                data: [
+                  "Definition",
+                  "Trait Theory of Personality",
+                  "Type-cum-Trait Theory of Personality",
+                ],
+              },
+            },
+          },
+        },
+      };
     //.......................................>>>>>>>>SCIENCE<<<<<<<<<<<<<<<<<<<................
     case "3bcamaj":
       return {
@@ -1338,7 +1382,406 @@ function getData(semPstream) {
           },
         },
       };
+    case "3chemaj":
+      return {
+        stream: "CHEMISTRY Maj",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UCHEMAJ23003",
+            name: "ORGANIC CHEMISTRY-II",
+            units: {
+              unit1: {
+                name: "Stereochemistry",
+                data: [
+                  "Tetrahedral carbon",
+                  "Chirality",
+                  "Fischer Projection, Newman and Sawhorse Projection formulae and their interconversions",
+                  "Geometrical isomerism: cis–trans and syn-anti isomerism",
+                  "E/Z notations with C.I.P rules",
+                  "Re/Si face",
+                  "Topicity: Homotopic, Heterotopic, Enantiotopic, Diasterotopic group",
+                  "Optical activity",
+                  "Specific rotation",
+                  "Chirality",
+                  "Asymmetry/Disymmetry",
+                  "Enantiomers",
+                  "Molecules with two or more chiral centres",
+                  "Diastereoisomers",
+                  "Meso compounds",
+                  "Racemic modification and resolution",
+                  "Relative and absolute configuration: D/L and R/S designations",
+                  "Threo-erythro form",
+                  "Atropisomerism",
+                ],
+              },
+              unit2: {
+                name: "Cycloalkanes and Conformational Analysis",
+                data: [
+                  "Conformation and physical properties",
+                  "Conformation of ethane, propane, and butane (including substituted variety)",
+                  "Types of cycloalkanes and their relative stability",
+                  "Baeyer strain theory",
+                  "Conformation analysis of cycloalkanes (cyclobutane, cyclopentane, cyclohexane, mono and di-substituted cyclohexanes)",
+                  "Relative stability",
+                  "Energy diagrams",
+                  "Chair, Boat and Twist boat forms of cyclohexane and decalin",
+                ],
+              },
+              unit3: {
+                name: "Dynamic Stereochemistry",
+                data: [
+                  "Introduction (Stereo-selective and stereo-specific reactions)",
+                  "Dynamic stereochemistry of acyclic and cyclic molecules",
+                  "Nucleophilic substitution",
+                  "Elimination reactions",
+                  "Addition reactions",
+                ],
+              },
+              unit4: {
+                name: "Chemistry of Halogenated Hydrocarbons",
+                data: [
+                  "Alkyl halides: Naming and structure of alkyl halides",
+                  "Methods of preparation",
+                  "Allylic bromination of alkenes",
+                  "Nucleophilic substitution reactions–SN1, SN2, and SNi mechanisms with stereochemical aspects and effect of solvent",
+                  "Nucleophilic substitution vs. elimination",
+                  "Aryl halides: Preparation, including preparation from diazonium salts",
+                  "Nucleophilic aromatic substitution: SNAr, cine Substitution",
+                  "Relative reactivity of alkyl, allyl/benzyl, vinyl, and aryl halides towards nucleophilic substitution reactions",
+                ],
+              },
+              unit5: {
+                name: "PRACTICAL(any three)",
+                data: [
+                  "Detection of special elements in solid or liquid organic compounds",
+                  "Perform an Iodoform reaction with ethanol/Isopropanol/acetone/any suitable compound",
+                  "Preparation of Aryl halide involving diazonium salt",
+                  "Bromination of acetanilide by conventional method",
+                  "Bromination of acetanilide by green method (Bromate-bromide method)",
+                  "Preparation of 1,3,5-tribromo benzene",
+                ],
+              },
+            },
+          },
+          subject2: {
+            code: ": UCHEMAJ23004",
+            name: "INORGANIC CHEMISTRY-II",
+            units: {
+              unit1: {
+                name: "Chemical Bonding",
+                data: [
+                  "Ionic character in covalent compounds: Bond moment and dipole moment",
+                  "Percentage ionic character from dipole moment and electronegativity difference",
+                  "Metallic Bond: Qualitative idea of valence bond and band theories",
+                  "Semiconductors and insulators",
+                  "Defects in solids",
+                  "Weak Chemical Forces: van der Waals forces, ion-dipole forces, dipole-dipole interactions, induced dipole interactions, instantaneous dipole-induced dipole interactions",
+                  "Repulsive forces",
+                  "Hydrogen bonding (theories of hydrogen bonding, valence bond treatment)",
+                  "Effects of chemical force: melting and boiling points, solubility energetics of dissolution process",
+                ],
+              },
+              unit2: {
+                name: "General Principles of Metallurgy",
+                data: [
+                  "Chief modes of occurrence of metals based on standard electrode potentials",
+                  "Ellingham diagrams for reduction of metal oxides using carbon and carbon monoxide as reducing agents",
+                  "Electrolytic reduction",
+                  "Hydrometallurgy",
+                  "Methods of purification of metals: Electrolytic Kroll process, Parting process, van Arkel-de Boer process, Mond’s process, Zone refining",
+                ],
+              },
+              unit3: {
+                name: "Acids and Bases",
+                data: [
+                  "Brönsted-Lowry concept of acid-base reactions",
+                  "Solvated proton",
+                  "Relative strength of acids",
+                  "Types of acid-base reactions",
+                  "Levelling solvents",
+                  "Lewis acid-base concept",
+                  "Classification of Lewis acids",
+                  "Hard and Soft Acids and Bases (HSAB)",
+                  "Application of HSAB principle",
+                ],
+              },
+              unit4: {
+                name: "Oxidation-Reduction",
+                data: [
+                  "Redox equations",
+                  "Standard Electrode Potential and its application to inorganic reactions",
+                  "Principles involved in volumetric analysis",
+                ],
+              },
+            },
+          },
+          subject3: {
+            code: ": UCHEMAJ23004",
+            name: "INORGANIC CHEMISTRY-II PRACTICAL",
+            units: {
+              unit1: {
+                name: "Titrimetric Analysis",
+                data: [
+                  "Calibration and use of apparatus",
+                  "Preparation of solutions of different Molarity/Normality of titrants",
+                ],
+              },
+              unit2: {
+                name: "Acid-Base Titrations",
+                data: [
+                  "Estimation of carbonate and hydroxide present together in mixture",
+                  "Estimation of carbonate and bicarbonate present together in a mixture",
+                  "Estimation of free alkali present in different soaps/detergents",
+                ],
+              },
+              unit3: {
+                name: "Oxidation-Reduction Titrimetry",
+                data: [
+                  "Estimation of Fe (II) and oxalic acid using standardized KMnO4 solution",
+                  "Estimation of oxalic acid and sodium oxalate in a given mixture",
+                  "Estimation of Fe (II) with K2Cr2O7 using internal (diphenylamine, anthranilic acid) and external indicator",
+                ],
+              },
+            },
+          },
+          subject3: {
+            name: "PHYSICAL CHEMISTRY-I",
+            code: "UCHEMAJ23005",
+            units: {
+              unit1: {
+                name: "Gaseous State",
+                data: [
+                  "Kinetic molecular model of a gas: postulates and derivation of the kinetic gas equation",
+                  "Concept of temperature and Gas Laws from KTG",
+                  "Collision Number, Collision frequency, Collision diameter, Mean free path and viscosity of gases",
+                  "Temperature and pressure dependence of viscosity, relation between mean free path and coefficient of viscosity",
+                  "Calculation of σ from η",
+                  "Variation of viscosity with temperature and pressure",
+                  "Maxwell distribution of speeds in one, two and three dimensions",
+                  "Molecular velocities (average, root mean square and most probable) and average kinetic energy",
+                  "Law of equipartition of energy, degrees of freedom and heat capacity from equipartition principle",
+                  "Behavior of real gases: Deviations from ideal gas behavior, compressibility factor, Z, and its variation with pressure",
+                  "Causes of deviation from ideal behavior, van der Waals equation of state, its derivation and application",
+                  "Other equations of state (Berthelot, Dietirici), virial equation of state",
+                  "Van der Waals equation expressed in virial form and calculation of Boyle temperature",
+                  "Isotherms of real gases and their comparison with Van der Waals isotherms",
+                  "Continuity of states, critical state, relation between critical constants and Van der Waals constants",
+                  "Law of corresponding states",
+                ],
+              },
+              unit2: {
+                name: "Liquid State",
+                data: [
+                  "Physical properties of liquids",
+                  "Vapour pressure, surface tension and coefficient of viscosity, and their determination",
+                  "Effect of addition of various solutes on surface tension and viscosity",
+                  "Explanation of cleansing action of detergents",
+                  "Temperature variation of viscosity of liquids and comparison with that of gases",
+                  "Concepts and Applications of liquid crystals",
+                ],
+              },
+              unit3: {
+                name: "Solid State",
+                data: [
+                  "Nature of the solid state",
+                  "Law of constancy of interfacial angles",
+                  "Law of rational indices, Miller indices",
+                  "Elementary ideas of symmetry, symmetry elements and symmetry operations",
+                  "Qualitative idea of point and space groups",
+                  "Seven crystal systems and fourteen Bravais lattices",
+                  "X-ray diffraction, Bragg’s law",
+                  "Simple account of rotating crystal method and powder pattern method",
+                  "Analysis of powder diffraction patterns of NaCl, CsCl and KCl",
+                  "Defects in crystals",
+                  "Glasses and liquid crystals",
+                ],
+              },
+              unit4: {
+                name: "Practical",
+                data: [
+                  "Surface tension measurements: Determination of the surface tension of a liquid/ethanol solution by Drop number method",
+                  "Surface tension measurements: Determination of composition of an unknown solution by Drop Number Method using solutions of known composition (solutions of ethanol may be used)",
+                  "Viscosity measurement using Ostwald’s viscometer: Determination of viscosity of aqueous solutions of polymer/ethanol/sugar at room temperature",
+                  "Viscosity measurement using Ostwald’s viscometer: Determination of composition of an unknown solution by Ostwald Viscometer using solutions of known composition (solutions of ethanol, sucrose may be used)",
+                  "Indexing of a given powder diffraction pattern of a cubic crystalline system",
+                ],
+              },
+            },
+          },
+          subject4: {
+            name: "FOOD CHEMISTRY",
+            code: "UCHESEC23003",
+            units: {
+              unit1: {
+                name: "Introduction",
+                data: [
+                  "Food Chemistry: Definition, scope, importance",
+                  "Major food constituents and their physicochemical properties",
+                  "Role of water in food",
+                ],
+              },
+              unit2: {
+                name: "Carbohydrates, Lipids, Proteins, Milk, and Enzymes",
+                data: [
+                  "Carbohydrates: Role, chemical and functional properties, starch modification, application in food industries",
+                  "Lipids: Role, physicochemical properties, rancidity, processing, hydrogenation, effect on functional properties and nutritive values",
+                  "Proteins and Amino acids: Properties, functional and nutritional properties",
+                  "Milk: Composition, chemical analysis, pasteurization, homogenized milk, powdered milk, dairy and non-dairy products, processing (butter, cheese)",
+                  "Enzymes: Nature, classification, properties, enzyme activity, removal of toxicants, flavor production, browning reactions",
+                ],
+              },
+              unit3: {
+                name: "Food Additives",
+                data: [
+                  "Types of additives: Preservatives, nutritional additives, coloring agents, flavoring agents, texturing agents, miscellaneous additives",
+                  "Benefits and risks of food additives",
+                  "Nutritive and non-nutritive sweeteners",
+                  "Nutritional additives: Vitamins (A, D, E, K, C, B1, B2, B3, B6, B9, H), Omega 3 and 6 fatty acids, minerals (Ca, P, Na, K, Cl, I, Zn, Mg, B)",
+                ],
+              },
+              unit4: {
+                name: "Chemistry of Indian Spices",
+                data: [
+                  "Medicinal and pharmacological properties of Indian spices: Black pepper, Cardamom, Ginger, Cumin, Turmeric, Fennel, Fenugreek, Coriander, Ajowan, Bay leaf, Curry leaf",
+                ],
+              },
+              unit5: {
+                name: "Pigments and Flavours",
+                data: [
+                  "Chlorophyll",
+                  "Myoglobin and Haemoglobin",
+                  "Anthocyanins",
+                  "Flavonoids",
+                  "Carotenoids",
+                  "Tannins",
+                  "Quinones",
+                  "Xanthones",
+                ],
+              },
+            },
+          },
+        },
+      };
+    case "3chedsc":
+      return {
+        stream: "CHEMISTRY DSC",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UCHEMDC23003",
+            name: "GREEN CHEMISTRY",
+            units: {
+              unit1: {
+                name: "Introduction",
+                data: [
+                  "Definitions of Green Chemistry",
+                  "Brief introduction of twelve principles of Green Chemistry, with examples",
+                ],
+              },
 
+              unit2: {
+                name: "Atom Economy",
+                data: [
+                  "Special emphasis on atom economy",
+                  "Reducing toxicity",
+                  "Green solvents",
+                ],
+              },
+
+              unit3: {
+                name: "Alternative Energy Source",
+                data: [
+                  "Green Chemistry and catalysis",
+                  "Alternative sources of energy",
+                  "Green energy and sustainability",
+                ],
+              },
+
+              unit4: {
+                name: "Real World cases in Green Chemistry",
+                data: [
+                  "Surfactants for carbon dioxide – Replacing smog-producing and ozone-depleting solvents with CO2 for precision cleaning and dry cleaning of garments",
+                  "Right fit pigment: Synthetic azo pigments to replace toxic organic and inorganic pigments",
+                  "Designing of environmentally safe marine antifoulant",
+                  "An efficient, green synthesis of a compostable and widely applicable plastic (polylactic acid) made from corn",
+                ],
+              },
+            },
+          },
+        },
+      };
+    case "3chemin":
+      return {
+        stream: "CHEMISTRY MIN",
+        year: "2nd",
+        sem: "3",
+        subjects: {
+          subject1: {
+            code: "UCHEMIN20002",
+            name: "CHEMISTRY-II Theory",
+            units: {
+              unit1: {
+                name: "Chemistry of Hydrocarbons",
+                data: [
+                  "Alkane: Formation, Wurtz Reaction, Wurtz-Fittig Reactions, Halogenation",
+                  "Alkene and Alkyne: Formation, E1/E2 elimination reactions, Saytzeff and Hofmann eliminations",
+                  "Reactions of Alkenes: Electrophilic additions (Markownikoff/Anti Markownikoff addition), hydroboration-oxidation, ozonolysis, catalytic reduction, hydroxylation",
+                  "Reactions of Alkynes: Alkylation of terminal alkynes, reduction reactions, electrophilic and nucleophilic additions, hydration to form carbonyl compounds",
+                  "Aromatic Hydrocarbons: Hydrogenation of benzene, directing effects of substituents, electrophilic aromatic substitution (Friedel-Craft’s alkylation/acylation, halogenation, nitration, sulphonation)",
+                ],
+              },
+              unit2: {
+                name: "Periodicity of Elements",
+                data: [
+                  "s, p, d, f block elements; long form of periodic table",
+                  "Effective nuclear charge, shielding effect, Slater rules, variation of effective nuclear charge",
+                  "Atomic radii (van der Waals)",
+                  "Ionic and crystal radii",
+                  "Covalent radii (octahedral and tetrahedral)",
+                  "Ionization enthalpy, successive ionization enthalpies, factors affecting ionization energy, applications",
+                  "Electron gain enthalpy, trends",
+                  "Electronegativity: Pauling’s, Mulliken’s, Allred-Rachow’s, Mulliken-Jaffé’s scales, variation with bond order, partial charge, hybridization, group electronegativity",
+                ],
+              },
+              unit3: {
+                name: "Liquid and Solid State",
+                data: [
+                  "Liquid State: Physical properties (vapour pressure, surface tension, coefficient of viscosity), effects of solutes on surface tension and viscosity, cleansing action of detergents, temperature variation of viscosity",
+                  "Solid State: Nature, law of constancy of interfacial angles, law of rational indices, Miller indices, symmetry elements, crystal systems (seven) and Bravais lattices (fourteen), X-ray diffraction, Bragg’s law, analysis of crystal structure (NaCl, KCl)",
+                ],
+              },
+            },
+          },
+          subject2: {
+            code: "UCHEMIN20002",
+            name: "CHEMISTRY-II PRACTICAL",
+            units: {
+              unit1: {
+                name: "UNIT I (any two)",
+                data: [
+                  "Preliminary characterization of aliphatic and aromatic compounds by ignition",
+                  "Detection of active unsaturation in Cinnamic acid or any suitable compound",
+                  "Bromination of Acetanilide by green method using Potassium bromide and Potassium bromate",
+                ],
+              },
+
+              unit2: {
+                name: "UNIT II (any two)",
+                data: [
+                  "Determination of Density of a liquid",
+                  "(2.a) Determination of the surface tension of a liquid or a dilute solution using a stalagmometer",
+                  "(2.b) Study of the variation of surface tension of a solution with concentration",
+                  "(3.a) Determination of the coefficient of viscosity of a liquid or dilute solution using an Ostwald’s viscometer",
+                  "(3.b) Study of the variation of viscosity of an aqueous solution with concentration of solute",
+                ],
+              },
+            },
+          },
+        },
+      };
     default:
       return {};
   }
