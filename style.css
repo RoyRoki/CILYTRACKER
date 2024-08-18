@@ -6,7 +6,7 @@ body {
 
 body {
   position: relative;
-  background-image: linear-gradient(to top, #e9eff2 0%, #e8eff2 100%);
+  background-color: white;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -31,7 +31,7 @@ details > summary {
   padding-left: 1em;
 }
 .tree summary:hover {
-  color: rgb(1, 130, 1);
+  color: #0056b3;
 }
 
 .tree summary::marker {
@@ -103,11 +103,14 @@ ul details[open] > summary::before {
   transform: rotate(180deg);
 }
 details[open] > summary {
-  color: green;
+  color: black;
+  font-weight:550;
 }
-details[open] > summary::before {
-  border-color: green;
+details[close] > summary {
+  color: black;
+  font-weight:550;
 }
+
 .checkbox {
   position: relative;
   bottom: -3px;
@@ -127,13 +130,9 @@ header {
   flex-direction: column;
   padding: 0.5;
   height: auto;
-  background-color: rgb(243, 247, 248);
-  box-shadow: 0 5px 25px RGB(26, 34, 39 / 10%);
-  transition: background-color 0.5s ease-in-out;
+  background-color: #ffffff;
 }
-header:hover {
-  background-color: #c4bdbd81;
-}
+
 .firstrow {
   display: flex;
   align-items: center;
@@ -150,7 +149,7 @@ header img {
 header h1 {
   padding-top: 0.2em;
   margin: 0;
-  color: #7ccf29;
+  color: #8dabcd;
   font-size: 3rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -161,7 +160,7 @@ header h1 {
   transition: color 0.5s ease-in-out;
 }
 header h1:hover {
-  color: #519e04;
+  color:#769ecb;
 }
 header p {
   color: rgb(97, 98, 106);
@@ -218,7 +217,7 @@ header p:hover {
   background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
-  color: #888;
+  color: #eeeeee;
   position: absolute;
   top: 1.3em;
   right: 1em;
@@ -240,7 +239,7 @@ header p:hover {
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: gray;
+  background-color: rgb(80, 80, 80);
   transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -262,7 +261,7 @@ header p:hover {
 }
 
 .popup h2 {
-  color: #7ccf29;
+  color: #79a1cf;
   font-family: "Akaya Telivigala", system-ui;
   margin-bottom: 10px;
   font-size: 2em !important;
@@ -283,34 +282,42 @@ header p:hover {
   overflow-x: auto;
   gap: 10px;
   padding: 1em 0.5em 1em 0.5em;
-  margin-top: 0.2em;
-  background: linear-gradient(to bottom, transparent, #d3cfcf08);
-  box-shadow: 0 5px 25px RGB(26, 34, 39 / 10%);
-  transition: background-color 0.5s ease-in-out;
+  background: white;
+  box-shadow: 0px 5px 10px rgba(26, 34, 39, 0.081);
+  transition: background-color 0.4s ease-in-out;
 }
-.sem:hover,
-.course:hover {
-  background-color: #c4bdbd81;
+.sem {
+  box-shadow: inset 0px 4px 10px rgba(155, 156, 158, 0.139);
+
+}
+.popsem {
+  background-color: rgba(255, 255, 255, 0.149);
+  border-radius: 12px;
+  margin: 10px;
+}
+.sem:hover , .course:hover {
+  background: rgb(241, 241, 241);
 }
 .course,
 .popsem {
   flex-wrap: wrap;
   overflow-x: auto;
+  box-shadow: none;
 }
 .sem button,
 .course input,
 .popup button {
-  background-color: rgba(244, 244, 244, 0.402) #ecf0f1;
-  color: rgb(97, 98, 106);
-  border: 2px solid rgb(97, 98, 106);
+  background-color: #f8fafb;
+  color: rgb(36, 36, 37);
+  border: 2px solid rgb(86, 88, 90);
   border-radius: 25px;
-  padding: 10px 20px;
-  font-size: 1.2rem;
+  padding: 8px 16px;
+  font-size: 1.21rem;
   scale: 0.85;
   font-family: "Akaya Telivigala", system-ui;
   cursor: pointer;
   transition: background-color 0.3s, color 0.2s, transform 0.2s;
-  box-shadow: 0 4px 8px rgba(52, 51, 51, 0.199);
+  box-shadow: 0 5px 12px rgba(94, 92, 92, 0.1);
 }
 .popsem button {
   scale: 1 !important;
@@ -319,14 +326,14 @@ header p:hover {
 .sem button:hover,
 .course input:hover,
 .popup button:hover {
-  background-color: #7ccf29;
+  background-color: #73a5de;;
   color: white;
   transform: translateY(-3px);
 }
 
 .sem button:active,
 .course input:active {
-  background-color: #2828284f;
+  background-color: #b2b2b2;
   transform: translateY(0);
 }
 .sem button,
@@ -340,8 +347,11 @@ header p:hover {
   flex-direction: column;
   background-color: #9b9b9b09;
   padding: 1em;
-  border-radius: 8px;
-  box-shadow: 1px 11px 100px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 20px rgba(155, 156, 158, 0.269);
+  transition: background-color 0.5s ease-in-out;
+}
+.infoheader:hover {
+   background-color: #fdfdfd;
 }
 
 .infoheader h1 {
@@ -395,8 +405,8 @@ header p:hover {
     font-size: 12px;
     padding: 8px 12px;
   }
-  header:hover {
-    background-color: rgb(233, 236, 236) !important;
+  .infoheader:hover {
+   background-color: #fdfdfd;
   }
   .sem:hover, .course:hover {
     background: linear-gradient(to bottom, transparent, #d3cfcf17) !important;
@@ -409,8 +419,8 @@ header p:hover {
 
 /* Footer Styles */
 footer {
-  background: linear-gradient(to bottom, transparent, #8885857e);
-  color: #2d2b2b;
+  background: linear-gradient(to bottom, transparent, #d3cfcf7e);
+  color: #484848;
   text-align: center;
   padding: 1rem 0;
   position: relative;
@@ -420,8 +430,8 @@ footer {
   transition: color 0.5s ease-out, background-color 0.5s ease-in-out;
 }
 footer:hover {
-  color: green;
-  background-color: #c4bdbd20;
+  color: #0578cf;
+  background-color: #dadadac5;
 }
 
 .footer-content {

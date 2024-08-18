@@ -4,6 +4,7 @@ var masterData = {};
 
 window.onload = function () {
   document.getElementById("popupOverlay").style.display = "flex";
+  document.querySelector("body").style.overflow = "hidden"
   if (STREAM.length === 0 && SEM === 0) homeInfoHeader();
 };
 
@@ -16,6 +17,7 @@ document.addEventListener("change", function (event) {
 
 function closePopup() {
   document.getElementById("popupOverlay").style.display = "none";
+  document.querySelector("body").style.overflow = ""
 }
 
 
@@ -23,6 +25,7 @@ const loadTracker = (stream) => {
   if(SEM === 0) {
     STREAM = stream;
     document.getElementById("popupOverlay").style.display = "flex";
+    document.querySelector("body").style.overflow = ""
     return;
   }
   closePopup()
@@ -38,6 +41,7 @@ function showSlyTracker(stream) {
   
   if (SEM === 0) {
     document.getElementById("popupOverlay").style.display = "flex";
+    document.querySelector("body").style.overflow = ""
     return;
   }
 
@@ -201,6 +205,7 @@ function setSem(n) {
     return;
   }
   document.getElementById("popupOverlay").style.display = "none";
+  document.querySelector("body").style.overflow = ""
   const show = document.getElementById("show");
   show.innerHTML = "";
   let Course = STREAM.length === 0 ? "Enter Course" : STREAM;
