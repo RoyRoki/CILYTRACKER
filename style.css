@@ -165,7 +165,6 @@ header h1:hover {
 }
 header p {
   color: rgb(97, 98, 106);
-  margin-left: 1em;
   transition: color 0.5s ease-in-out;
 }
 header p:hover {
@@ -186,6 +185,68 @@ header p:hover {
   z-index: 1000;
   opacity: 0;
   animation: fadeIn 0.5s forwards;
+}
+
+.beautiful-button {
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.beautiful-button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.beautiful-button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fffffff8;
+  left: 0;
+  top: 0;
+  border-radius: 20px;
 }
 
 @keyframes fadeIn {
@@ -338,7 +399,7 @@ header p:hover {
 .course input:hover,
 .popup button:hover {
   background-color: #73a5de;;
-  color: white;
+  color: rgb(0, 0, 0);
   transform: translateY(-3px);
 }
 
@@ -428,6 +489,28 @@ header p:hover {
   }
 }
 
+.pyqbutton {
+  font-family: "Akaya Telivigala", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  font-size: larger;
+  z-index: 50;
+  position: fixed; /* Fixed positioning to keep it in the same place */
+  bottom: 20px; /* Distance from the bottom of the screen */
+  right: 20px; /* Distance from the right of the screen */
+  width: 60px; /* Set width to make it round */
+  height: 60px; /* Set height to make it round */
+  border-radius: 50%; /* Makes the button round */
+  background-color: #111; /* Button background color */
+  color: rgb(0, 0, 0); /* Text color */
+  display: flex;
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
+  cursor: pointer; /* Pointer cursor on hover */
+  border: none; /* No border */
+  user-select: none; /* Prevent text selection */
+}
+
 /* Footer Styles */
 footer {
   background: linear-gradient(to bottom, transparent, #d3cfcf7e);
@@ -490,10 +573,9 @@ footer:hover {
 
 /*dark buttom*/
 .theme-toggle {
-  position: absolute;
+  position: relative;
   z-index: 5;
-  top: 5px;
-  right: 5px;
+   -webkit-tap-highlight-color: transparent;
   width: 50px; /* Adjust as needed */
   height: 50px; /* Adjust as needed */
   background-color: transparent; /* Change if you want a background */
@@ -503,7 +585,7 @@ footer:hover {
 
 .theme-toggle .sun-and-moon {
   position: absolute;
-  right: 10px; /* Adjust the distance from the right edge */
+  right: 5px; /* Adjust the distance from the right edge */
   top: 50%;
   transform: translateY(-50%);
   fill: currentColor;
@@ -514,7 +596,9 @@ footer:hover {
   transition: transform 0.3s ease, fill 0.3s ease;
 }
 
-
+.secondrow {
+  display: inline-flex;
+}
 
 
 
@@ -524,7 +608,7 @@ body {
   color: black;
 }
 
-header, .infoheader, .sem, .course, .popup, footer {
+header, .infoheader, .sem, .pyqbutton, .course, .popup, footer {
   background-color: rgb(247, 247, 247);
   color: black;
 }
@@ -592,10 +676,19 @@ body.dark-theme footer {
   transition: background-color 3s ease;
 }
 
+body.dark-theme .beautiful-button:after {
+  background: #010134;
+}
+
 body.dark-theme details[open] > summary {
   color: #018be0;
 }
 
 body.dark-theme ul summary::before {
   background-color: #000000;
+}
+
+
+.noStyling {
+  all: unset;
 }

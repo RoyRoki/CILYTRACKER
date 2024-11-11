@@ -3,11 +3,20 @@ var SEM = 0;
 var masterData = {};
 
 window.onload = function () {
-  document.getElementById("popupOverlay").style.display = "flex";
-  document.querySelector("body").style.overflow = "hidden"
-  if (STREAM.length === 0 && SEM === 0) homeInfoHeader();
-};
+  // Load previously saved data
+  STREAM = localStorage.getItem('STREAM') || "";
+  SEM = parseInt(localStorage.getItem('SEM')) || 0;
+  
+  // Show previous values if available
+  if (STREAM && SEM !== 0) {
+    loadTracker(STREAM);
+  } else {
+    homeInfoHeader();
+  }
 
+  document.getElementById("popupOverlay").style.display = "flex";
+  document.querySelector("body").style.overflow = "hidden";
+};
 
 document.addEventListener("change", function (event) {
   if (event.target.type === "checkbox") {
@@ -17,31 +26,29 @@ document.addEventListener("change", function (event) {
 
 function closePopup() {
   document.getElementById("popupOverlay").style.display = "none";
-  document.querySelector("body").style.overflow = ""
+  document.querySelector("body").style.overflow = "";
 }
-
 
 const loadTracker = (stream) => {
   if(SEM === 0) {
     STREAM = stream;
     document.getElementById("popupOverlay").style.display = "flex";
-    document.querySelector("body").style.overflow = ""
+    document.querySelector("body").style.overflow = "";
     return;
   }
-  closePopup()
+  closePopup();
   STREAM = stream;
-  loadScript(`sem${SEM}Data.js` , () => {
-    onScriptLoaded()
-    showSlyTracker(stream)
-  })
+  localStorage.setItem('STREAM', STREAM); // Save the stream in localStorage
+  loadScript(`sem${SEM}Data.js`, () => {
+    onScriptLoaded();
+    showSlyTracker(stream);
+  });
 }
 
-
 function showSlyTracker(stream) {
-  
   if (SEM === 0) {
     document.getElementById("popupOverlay").style.display = "flex";
-    document.querySelector("body").style.overflow = ""
+    document.querySelector("body").style.overflow = "";
     return;
   }
 
@@ -53,8 +60,6 @@ function showSlyTracker(stream) {
   const ul = document.createElement("ul");
   ul.classList.add("tree");
 
-  //const masterData = getData(SEM + stream);
-
   for (let subjectN in masterData.subjects) {
     if (masterData.subjects.hasOwnProperty(subjectN)) {
       const subject = masterData.subjects[subjectN];
@@ -64,9 +69,9 @@ function showSlyTracker(stream) {
       const code = document.createElement('p');
 
       summary.textContent = subject.name;
-      code.textContent = `Code: ${subject.code}`
+      code.textContent = `Code: ${subject.code}`;
       details.appendChild(summary);
-      details.appendChild(code)
+      details.appendChild(code);
 
       const units = document.createElement("ul");
 
@@ -86,8 +91,8 @@ function showSlyTracker(stream) {
             if (unit.data[topic]) {
               const topicLi = document.createElement("li");
               const checkBox = document.createElement("input");
-              checkBox.type = "checkbox";
               ++numberOfCheckBox;
+              checkBox.type = "checkbox";
               checkBox.classList.add("checkbox");
               checkBox.id = `${numberOfCheckBox}`;
               checkBox.style.marginRight = "1px";
@@ -107,6 +112,7 @@ function showSlyTracker(stream) {
       ul.appendChild(li);
     }
   }
+
   let Course = !masterData.stream ? "No Data For " + stream : masterData.stream;
   let Sem = convertToRoman(SEM);
   let Year = convertToOrdinal(Math.floor((SEM + 1) / 2));
@@ -130,7 +136,7 @@ function showSlyTracker(stream) {
   show.appendChild(div);
   show.appendChild(ul);
 
-  loadCheckboxStates(); //loading
+  loadCheckboxStates(); // loading
 }
 
 function saveCheckboxStates() {
@@ -168,44 +174,17 @@ function debounce(func, delay) {
     timeout = setTimeout(() => func(...args), delay);
   };
 }
-function convertToOrdinal(num) {
-  const remainder10 = num % 10;
-  const remainder100 = num % 100;
-
-  if (remainder10 === 1 && remainder100 !== 11) {
-    return `${num}st`;
-  } else if (remainder10 === 2 && remainder100 !== 12) {
-    return `${num}nd`;
-  } else if (remainder10 === 3 && remainder100 !== 13) {
-    return `${num}rd`;
-  } else {
-    return `${num}th`;
-  }
-}
-function convertToRoman(num) {
-  const romanNumerals = {
-    1: "I",
-    2: "II",
-    3: "III",
-    4: "IV",
-    5: "V",
-    6: "VI",
-    7: "VII",
-    8: "VIII",
-  };
-
-  return romanNumerals[num] || "Number out of range";
-}
 const savedebounce = debounce(saveCheckboxStates, 300);
 
 function setSem(n) {
   SEM = n;
-  if (STREAM.length != 0) {
+  localStorage.setItem('SEM', SEM); // Save SEM to localStorage
+  if (STREAM.length !== 0) {
     loadTracker(STREAM);
     return;
   }
   document.getElementById("popupOverlay").style.display = "none";
-  document.querySelector("body").style.overflow = ""
+  document.querySelector("body").style.overflow = "";
   const show = document.getElementById("show");
   show.innerHTML = "";
   let Course = STREAM.length === 0 ? "Enter Course" : STREAM;
@@ -269,12 +248,45 @@ function loadScript(url, callback) {
 
     document.head.appendChild(script);
 }
+
 function onScriptLoaded() {
     if (typeof getData === 'function') {
         masterData = getData(SEM + STREAM);
     } else {
         console.error('getData function is not available.');
     }
+}
+
+// Define the function first
+function convertToRoman(num) {
+  const romanNumerals = {
+    1: "I",
+    2: "II",
+    3: "III",
+    4: "IV",
+    5: "V",
+    6: "VI",
+    7: "VII",
+    8: "VIII",
+  };
+
+  return romanNumerals[num] || "Number out of range";
+}
+
+// Now you can use it later in the code
+function convertToOrdinal(num) {
+  const remainder10 = num % 10;
+  const remainder100 = num % 100;
+
+  if (remainder10 === 1 && remainder100 !== 11) {
+    return `${num}st`;
+  } else if (remainder10 === 2 && remainder100 !== 12) {
+    return `${num}nd`;
+  } else if (remainder10 === 3 && remainder100 !== 13) {
+    return `${num}rd`;
+  } else {
+    return `${num}th`;
+  }
 }
 
 
