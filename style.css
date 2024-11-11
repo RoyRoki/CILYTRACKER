@@ -14,11 +14,12 @@ body {
   min-height: 100vh;
   margin: 0;
   background-attachment: fixed;
+  transition: background-color 0.5s ease;
 }
 ul {
   list-style: none;
   line-height: 2rem;
-  user-select: none;
+  /* user-select: none; */
 }
 details > summary {
   list-style: none;
@@ -274,8 +275,7 @@ header p:hover {
 }
 
 .sem,
-.course,
-.popsem {
+.course {
   display: flex;
   flex-wrap: nowrap;
   justify-content: stretch;
@@ -286,14 +286,24 @@ header p:hover {
   box-shadow: 0px 5px 10px rgba(26, 34, 39, 0.081);
   transition: background-color 0.4s ease-in-out;
 }
-.sem {
-  box-shadow: inset 0px 4px 10px rgba(155, 156, 158, 0.139);
 
-}
 .popsem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 1em 0.5em 1em 0.5em;
+  background: white;
+  box-shadow: 0px 5px 10px rgba(26, 34, 39, 0.081);
+  transition: background-color 0.4s ease-in-out;
   background-color: rgba(255, 255, 255, 0.149);
   border-radius: 12px;
   margin: 10px;
+}
+.sem {
+  box-shadow: inset 0px 4px 10px rgba(155, 156, 158, 0.139);
+
 }
 .sem:hover , .course:hover {
   background: rgb(241, 241, 241);
@@ -321,6 +331,7 @@ header p:hover {
 }
 .popsem button {
   scale: 1 !important;
+  flex: 1 1 30% !important;
 }
 
 .sem button:hover,
@@ -473,4 +484,118 @@ footer:hover {
   font-family: "Akaya Telivigala", system-ui;
   font-weight: 400;
   font-style: normal;
+}
+
+
+
+/*dark buttom*/
+.theme-toggle {
+  position: absolute;
+  z-index: 5;
+  top: 5px;
+  right: 5px;
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  background-color: transparent; /* Change if you want a background */
+  border: none;
+  cursor: pointer;
+}
+
+.theme-toggle .sun-and-moon {
+  position: absolute;
+  right: 10px; /* Adjust the distance from the right edge */
+  top: 50%;
+  transform: translateY(-50%);
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+/* Initial SVG styling */
+.theme-toggle .sun-and-moon {
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+
+
+
+
+/* Default (Light Theme) */
+body {
+  background-color: white;
+  color: black;
+}
+
+header, .infoheader, .sem, .course, .popup, footer {
+  background-color: rgb(247, 247, 247);
+  color: black;
+}
+
+.theme-toggle .sun-and-moon {
+  fill: black;
+}
+
+/* Dark Theme */
+body.dark-theme .popup {
+  background-image: linear-gradient(135deg, #080120 0%, #091940 100%);
+}
+body.dark-theme .popup button ,
+body.dark-theme button,
+body.dark-theme .course input {
+  background-color: transparent;
+  border-color: #d2d2d2;
+  color: white;
+}
+
+body.dark-theme {
+  background-color: #000000;
+  color: #ffffff;
+  transition: background-color 0.5s ease;
+}
+
+body.dark-theme header,
+body.dark-theme .infoheader,
+body.dark-theme .sem,
+body.dark-theme .course,
+body.dark-theme .popup,
+body.dark-theme footer {
+  background-color: #050505;
+  color: #000000;
+  transition: background-color 0.5s ease;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme p {
+  color: #e5e5e5;
+}
+
+body.dark-theme .theme-toggle .sun-and-moon {
+  fill: #ffffff;
+}
+
+body.dark-theme a {
+  color: #e3e3e3;
+}
+
+body.dark-theme a:hover,
+body.dark-theme .subheader-row h2:hover,
+body.dark-theme .subheader-row p:hover {
+  color: #ffffff;
+}
+
+body.dark-theme .popup-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, #00000097 0%, #01081bb6 100%);
+}
+body.dark-theme footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, #000000 0%, #01081b 100%);
+  transition: background-color 3s ease;
+}
+
+body.dark-theme details[open] > summary {
+  color: #018be0;
+}
+
+body.dark-theme ul summary::before {
+  background-color: #000000;
 }
