@@ -296,7 +296,7 @@ const sunIcon = document.querySelector('.sun-icon');
 const moonIcon = document.querySelector('.moon-icon');
 
 // Check the current theme from localStorage and apply it
-if (localStorage.getItem('theme') === 'dark') {
+if (localStorage.getItem('theme') === 'dark' || window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
   body.classList.add('dark-theme');
   sunIcon.style.display = 'none';
   moonIcon.style.display = 'block';
