@@ -28,11 +28,11 @@ Follow these instructions to set up and run the project locally.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/royroki/cilytracker.git
+   https://github.com/RoyRoki/CILYTRACKER.git
    ```
 2. Navigate to the project folder:
    ```bash
-   cd cilytracker
+   cd CILYTRACKER
    ```
 3. Open the `index.html` file in a browser or serve the app using a local server like [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
