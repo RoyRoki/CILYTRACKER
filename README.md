@@ -63,7 +63,8 @@ The application is optimized with meta tags to enhance search visibility, includ
 
 ## Screenshots
 
-Add screenshots of your app here to showcase its design and functionality.
+![Screenshot from 2024-11-24 11-08-16](https://github.com/user-attachments/assets/1880419a-4274-4393-b167-70fea4508b41)
+
 
 ## Contributing
 
