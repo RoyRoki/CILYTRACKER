@@ -4,9 +4,9 @@ var masterData = {};
 
 window.onload = function () {
   // Load previously saved data
-  STREAM = localStorage.getItem('STREAM') || "";
-  SEM = parseInt(localStorage.getItem('SEM')) || 0;
-  
+  STREAM = localStorage.getItem("STREAM") || "";
+  SEM = parseInt(localStorage.getItem("SEM")) || 0;
+
   // Show previous values if available
   if (STREAM && SEM !== 0) {
     loadTracker(STREAM);
@@ -30,7 +30,7 @@ function closePopup() {
 }
 
 const loadTracker = (stream) => {
-  if(SEM === 0) {
+  if (SEM === 0) {
     STREAM = stream;
     document.getElementById("popupOverlay").style.display = "flex";
     document.querySelector("body").style.overflow = "";
@@ -38,12 +38,12 @@ const loadTracker = (stream) => {
   }
   closePopup();
   STREAM = stream;
-  localStorage.setItem('STREAM', STREAM); // Save the stream in localStorage
+  localStorage.setItem("STREAM", STREAM); // Save the stream in localStorage
   loadScript(`sem${SEM}Data.js`, () => {
     onScriptLoaded();
     showSlyTracker(stream);
   });
-}
+};
 
 function showSlyTracker(stream) {
   if (SEM === 0) {
@@ -66,7 +66,7 @@ function showSlyTracker(stream) {
       const li = document.createElement("li");
       const details = document.createElement("details");
       const summary = document.createElement("summary");
-      const code = document.createElement('p');
+      const code = document.createElement("p");
 
       summary.textContent = subject.name;
       code.textContent = `Code: ${subject.code}`;
@@ -91,6 +91,14 @@ function showSlyTracker(stream) {
             if (unit.data[topic]) {
               const topicLi = document.createElement("li");
               const checkBox = document.createElement("input");
+
+              // Create GPT Button
+              const gptButton = document.createElement("button");
+              gptButton.classList.add("gpt-btn");
+              gptButton.onclick = function () {
+                openChatGPT(unit.data[topic]); // Call GPT function
+              };
+
               ++numberOfCheckBox;
               checkBox.type = "checkbox";
               checkBox.classList.add("checkbox");
@@ -98,6 +106,7 @@ function showSlyTracker(stream) {
               checkBox.style.marginRight = "1px";
               topicLi.textContent = unit.data[topic];
               topicLi.appendChild(checkBox);
+              topicLi.appendChild(gptButton);
               dataList.appendChild(topicLi);
             }
           }
@@ -139,6 +148,13 @@ function showSlyTracker(stream) {
   loadCheckboxStates(); // loading
 }
 
+function openChatGPT(topic) {
+  const encodedTopic = encodeURIComponent(topic); // Encode for URL
+  const gptUrl = `https://chat.openai.com/?q=${encodedTopic}`; // ChatGPT URL
+
+  window.open(gptUrl, "_blank"); // Open in new tab
+}
+
 function saveCheckboxStates() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   let checkboxStates = {};
@@ -178,7 +194,7 @@ const savedebounce = debounce(saveCheckboxStates, 300);
 
 function setSem(n) {
   SEM = n;
-  localStorage.setItem('SEM', SEM); // Save SEM to localStorage
+  localStorage.setItem("SEM", SEM); // Save SEM to localStorage
   if (STREAM.length !== 0) {
     loadTracker(STREAM);
     return;
@@ -234,27 +250,27 @@ function homeInfoHeader() {
 }
 
 function loadScript(url, callback) {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = url;
 
-    script.onload = function() {
-        if (callback) callback();
-    };
+  script.onload = function () {
+    if (callback) callback();
+  };
 
-    script.onerror = function() {
-        console.error(`Failed to load script: ${url}`);
-    };
+  script.onerror = function () {
+    console.error(`Failed to load script: ${url}`);
+  };
 
-    document.head.appendChild(script);
+  document.head.appendChild(script);
 }
 
 function onScriptLoaded() {
-    if (typeof getData === 'function') {
-        masterData = getData(SEM + STREAM);
-    } else {
-        console.error('getData function is not available.');
-    }
+  if (typeof getData === "function") {
+    masterData = getData(SEM + STREAM);
+  } else {
+    console.error("getData function is not available.");
+  }
 }
 
 // Define the function first
@@ -289,38 +305,38 @@ function convertToOrdinal(num) {
   }
 }
 
-
-const themeToggleBtn = document.getElementById('theme-toggle');
+const themeToggleBtn = document.getElementById("theme-toggle");
 const body = document.body;
-const sunIcon = document.querySelector('.sun-icon');
-const moonIcon = document.querySelector('.moon-icon');
+const sunIcon = document.querySelector(".sun-icon");
+const moonIcon = document.querySelector(".moon-icon");
 
 // Check the current theme from localStorage and apply it
-if (localStorage.getItem('theme') === 'dark' || window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  body.classList.add('dark-theme');
-  sunIcon.style.display = 'none';
-  moonIcon.style.display = 'block';
+if (
+  localStorage.getItem("theme") === "dark" ||
+  (window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  body.classList.add("dark-theme");
+  sunIcon.style.display = "none";
+  moonIcon.style.display = "block";
 } else {
-  body.classList.remove('dark-theme');
-  sunIcon.style.display = 'block';
-  moonIcon.style.display = 'none';
+  body.classList.remove("dark-theme");
+  sunIcon.style.display = "block";
+  moonIcon.style.display = "none";
 }
 
 // Toggle theme on button click
-themeToggleBtn.addEventListener('click', () => {
-  body.classList.toggle('dark-theme');
+themeToggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-theme");
 
   // Toggle the icons
-  if (body.classList.contains('dark-theme')) {
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-    localStorage.setItem('theme', 'dark');
+  if (body.classList.contains("dark-theme")) {
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "block";
+    localStorage.setItem("theme", "dark");
   } else {
-    sunIcon.style.display = 'block';
-    moonIcon.style.display = 'none';
-    localStorage.setItem('theme', 'light');
+    sunIcon.style.display = "block";
+    moonIcon.style.display = "none";
+    localStorage.setItem("theme", "light");
   }
 });
-
-
-
