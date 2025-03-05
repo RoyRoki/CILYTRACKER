@@ -31,6 +31,47 @@ case "4aec":
       },
     },
   };
+case "4mdc":
+  return {
+    stream: "SOCIAL WORK",
+    year: "2nd",
+    sem: "4",
+    subjects: {
+      subject1: {
+        code: "UPOCMDC24062",
+        name: "Social Work",
+        units: {
+          unit1: {
+            name: "Basics of Social Work",
+            data: [
+              "Social Work - Definition, Nature & Objectives of Social Work",
+              "Basic Values and Principles of Social Work",
+              "Methods of Social Work: Primary and Secondary Methods",
+              "Voluntary and Professional Social Work: Definition, Nature and Differences"
+            ]
+          },
+          unit2: {
+            name: "Scenario of Social Work in India",
+            data: [
+              "Historical Scenario of Social Work in India: Origin and Development",
+              "Constructive works of Mahatma Gandhi, Jyotiba Phule, Vinobha Bhabe",
+              "Social Work in Contemporary India: Family Planning, Mental Health Issues and Community Health Problems in Rural India"
+            ]
+          },
+          unit3: {
+            name: "Role of Social Work",
+            data: [
+              "Family: Marriage Disputes, Family welfare (Rural and Urban Contexts)",
+              "Child: Child Abuse, Child labour, Child Trafficking",
+              "Youth: Youth Unrest, Juvenile Delinquency, Drug Addiction among Youths",
+              "Women: Domestic Violence, Women Trafficking",
+              "Human Rights: Right to Equality, Right to Education, Right to Work, Right to Freedom of Opinion and Expression"
+            ]
+          }
+        }
+      }
+    }
+  };
 
     //.......................................>>>>>>>>SCIENCE<<<<<<<<<<<<<<<<<<<................
     case "4stamin":

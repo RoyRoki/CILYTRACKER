@@ -96,7 +96,7 @@ function showSlyTracker(stream) {
               const gptButton = document.createElement("button");
               gptButton.classList.add("gpt-btn");
               gptButton.onclick = function () {
-                openChatGPT(unit.data[topic]); // Call GPT function
+                openChatGPT(subject.name, unit.name, unit.data[topic]); // Call GPT function
               };
 
               ++numberOfCheckBox;
@@ -148,12 +148,15 @@ function showSlyTracker(stream) {
   loadCheckboxStates(); // loading
 }
 
-function openChatGPT(topic) {
-  const encodedTopic = encodeURIComponent(topic); // Encode for URL
-  const gptUrl = `https://chat.openai.com/?q=${encodedTopic}`; // ChatGPT URL
-
+function openChatGPT(subject, unit, topic) {
+  const prompt = `Explain the topic "${topic}" from unit "${unit}" in the subject "${subject}". Provide a clear, concise explanation suitable for exam preparation. Include key points, examples, and important concepts.`;
+  
+  const encodedPrompt = encodeURIComponent(prompt);
+  const gptUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
+  
   window.open(gptUrl, "_blank"); // Open in new tab
 }
+
 
 function saveCheckboxStates() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
