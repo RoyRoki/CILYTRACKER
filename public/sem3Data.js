@@ -1782,6 +1782,58 @@ function getData(semPstream) {
           },
         },
       };
+
+
+
+      case "3edumin":
+      return {
+        stream: "Education Minor",
+        year: "2nd",
+        sem: "3/4",
+        subjects: {
+          subject1: {
+            code: "UEDCMIN20002",
+            name: "Psychological Foundation of Education",
+            units: {
+              unit1: {
+                name: "Educational Psychology and Development",
+                data: [
+                  "Definition, Nature and Scope; Distinction between Psychology and Educational Psychology",
+                  "Growth and Development: Stages and aspects of development in human life",
+                  "Physical, Social, Emotional, Cognitive and Language development of Infancy, Childhood and Adolescence",
+                  "Respective educational programmes"
+                ]
+              },
+              unit2: {
+                name: "Learning",
+                data: [
+                  "Definition and characteristics of Learning; Factors influencing Learning",
+                  "Theories of Learning: Classical and Operant conditioning, Trial and Error, Insightful Learning",
+                  "Memorization: LTM, STM",
+                  "Principles of economy involved in Memorization; Causes of Forgetting"
+                ]
+              },
+              unit3: {
+                name: "Intelligence",
+                data: [
+                  "Intelligence: Definition and Types",
+                  "Theories of Intelligence – Spearman, Thurstone, Guilford",
+                  "Characteristics of Verbal and Non-Verbal Tests of Intelligence"
+                ]
+              },
+              unit4: {
+                name: "Personality",
+                data: [
+                  "Definition",
+                  "Trait Theory of Personality",
+                  "Type–cum–Trait Theory of Personality"
+                ]
+              }
+            }
+          }
+        }
+      };
+
     default:
       return {};
   }
