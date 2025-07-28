@@ -7,6 +7,121 @@ function getData(semPstream) {
 
 
         //.......................................>>>>>>>>SCIENCE<<<<<<<<<<<<<<<<<<<................
+        case "1bcamaj":
+    return {
+        stream: "BCA",
+        year: "1st",
+        sem: "1",
+        subjects: {
+            subject1: {
+                code: "UBCAMAJ11001",
+                name: "Digital Electronics",
+                units: {
+                    unit1: {
+                        name: "Number system and codes",
+                        data: [
+                            "Binary, octal, hexadecimal and decimal number systems and their inter conversion",
+                            "BCD numbers (8421-2421), Gray code, excess–3 code, code conversion",
+                            "ASCII, EBCDIC codes, their advantages and disadvantages",
+                            "Binary addition and subtraction, Negative number representation: Sign magnitude, 1's, 2's Complement",
+                            "Signed and unsigned binary numbers, Fixed and floating-point representation"
+                        ]
+                    },
+                    unit2: {
+                        name: "Basic logic circuits",
+                        data: [
+                            "Logic gates (AND, OR, NOT, NAND, NOR, Ex-OR, Ex-NOR) and their truth tables",
+                            "Universal Gates, Laws of Boolean algebra, De-Morgan's theorem",
+                            "Min term, Max term, POS, SOP, K-Map for 2, 3, 4 variables",
+                            "Simplification by Boolean theorems, don’t care condition, Venn diagram",
+                            "SSI, MSI, LSI and VLSI circuits"
+                        ]
+                    },
+                    unit3: {
+                        name: "Logic Families",
+                        data: [
+                            "Introduction to RTL, DTL, TTL, ECL, CMOS, IIR, HTL logic families",
+                            "Comparative study, Basic circuit, performance characteristics"
+                        ]
+                    },
+                    unit4: {
+                        name: "Combinational Logic",
+                        data: [
+                            "Half adder, Full adder, parallel adder, half subtractor, full subtractor",
+                            "4-bit binary adder cum subtractor",
+                            "Multiplexer, Demultiplexer, Decoder, BCD to seven segment Decoder, Encoders"
+                        ]
+                    },
+                    unit5: {
+                        name: "Sequential Circuit",
+                        data: [
+                            "Set-reset latches, D-flip-flop, R-S flip-flop, J-K flip-flop, Master slave flip-flop",
+                            "Edge triggered flip-flop, T flip-flop",
+                            "Synchronous/Asynchronous counter, Up/down synchronous counter, Ripple Counter",
+                            "Applications of counter",
+                            "Serial in/Serial out shift register, Parallel in/Serial out shift register",
+                            "Serial in/parallel out shift register, parallel in/ parallel out shift register, Bi-directional register",
+                            "Applications of register"
+                        ]
+                    }
+                }
+            },
+            subject2: {
+                code: "UBCASEC11001",
+                name: "System Tools & Peripheral and Office Automation (SEC)",
+                units: {
+                    unit1: {
+                        name: "Introduction to Computers",
+                        data: [
+                            "Characteristics, Generations and Classification of Computers",
+                            "Block diagram of a computer",
+                            "System Software vs Application Software, CUI vs GUI",
+                            "Computer Languages: Low level, high level, Assembly, Compiler, Interpreter"
+                        ]
+                    },
+                    unit2: {
+                        name: "Peripheral devices",
+                        data: [
+                            "Input and Output Devices (Keyboard, Mouse, OCR, MICR, etc.)",
+                            "Primary & Secondary Storage (RAM, ROM, Hard Disk, CD etc.)",
+                            "Motherboard components"
+                        ]
+                    },
+                    unit3: {
+                        name: "Office Automation Tools and Software",
+                        data: [
+                            "Concept, benefits, challenges",
+                            "Document management, file sharing, data privacy"
+                        ]
+                    },
+                    unit4: {
+                        name: "Working with MS Word",
+                        data: [
+                            "Creating and editing documents, formatting text, using tables and lists",
+                            "Mail merge, images, charts, grammar check, watermark"
+                        ]
+                    },
+                    unit5: {
+                        name: "Working with MS Excel",
+                        data: [
+                            "Workbook formatting, using functions, sorting/filtering",
+                            "Creating and customizing charts"
+                        ]
+                    },
+                    unit6: {
+                        name: "Working with MS PowerPoint",
+                        data: [
+                            "Creating slides, applying animations and transitions",
+                            "Using slide master, slide show settings"
+                        ]
+                    }
+                }
+            }
+        }
+    };
+        
+        
+        
         case "1mathmaj":
             return {
                 stream: "Math Maj",
@@ -422,61 +537,59 @@ function getData(semPstream) {
                     },
                 },
             };
-   
-    // .......................................>>>>>>>>ARTS<<<<<<<<<<<<<<<<<<<................
-    
-    // New syllabus entry
-    case "1socmin":
-      return {
-        stream: "SOCIOLOGY",
-        year: "1st",
-        sem: "2",
-        subjects: {
-          subject1: {
-            code: "USOCMIN10001",
-            name: "Sociology of India",
-            units: {
-              unit1: {
-                name: "India - A plural Society",
-                data: [
-                  "Unity in Diversity",
-                  "Religion",
-                  "Ethnic",
-                  "Linguistic",
-                  "Regional"
-                ]
-              },
-              unit2: {
-                name: "Social Institutions and Practices",
-                data: [
-                  "Caste – concept, definition, Characteristics, Jajmani system, Nature of change",
-                  "Tribe - Notion, definition, Characteristics, Location, Features and types of Tribal economy, PVTG",
-                  "Village – Characteristics, economy, Nature of change"
-                ]
-              },
-              unit3: {
-                name: "Institution of Family and Marriage",
-                data: [
-                  "Meaning, Definition, Characteristics",
-                  "Forms",
-                  "Recent Structural and Functional Change"
-                ]
-              },
-              unit4: {
-                name: "Institution of Marriage",
-                data: [
-                  "Meaning, Definition, Characteristics",
-                  "Forms of marriage",
-                  "Recent Changes"
-                ]
-              }
-            }
-          }
-        }
-      };
 
-    // .......... More existing cases ..........
-    
+        // .......................................>>>>>>>>ARTS<<<<<<<<<<<<<<<<<<<................
+
+        // New syllabus entry
+        case "1socmin":
+            return {
+                stream: "SOCIOLOGY",
+                year: "1st",
+                sem: "2",
+                subjects: {
+                    subject1: {
+                        code: "USOCMIN10001",
+                        name: "Sociology of India",
+                        units: {
+                            unit1: {
+                                name: "India - A plural Society",
+                                data: [
+                                    "Unity in Diversity",
+                                    "Religion",
+                                    "Ethnic",
+                                    "Linguistic",
+                                    "Regional"
+                                ]
+                            },
+                            unit2: {
+                                name: "Social Institutions and Practices",
+                                data: [
+                                    "Caste – concept, definition, Characteristics, Jajmani system, Nature of change",
+                                    "Tribe - Notion, definition, Characteristics, Location, Features and types of Tribal economy, PVTG",
+                                    "Village – Characteristics, economy, Nature of change"
+                                ]
+                            },
+                            unit3: {
+                                name: "Institution of Family and Marriage",
+                                data: [
+                                    "Meaning, Definition, Characteristics",
+                                    "Forms",
+                                    "Recent Structural and Functional Change"
+                                ]
+                            },
+                            unit4: {
+                                name: "Institution of Marriage",
+                                data: [
+                                    "Meaning, Definition, Characteristics",
+                                    "Forms of marriage",
+                                    "Recent Changes"
+                                ]
+                            }
+                        }
+                    }
+                }
+            };
+               
 
 
         default:
